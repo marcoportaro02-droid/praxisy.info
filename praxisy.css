@@ -255,20 +255,11 @@ strong { font-weight: 600; color: var(--ink); }
 
 /* ---------- Hero ---------- */
 .hero { padding-top: clamp(120px, 16vh, 180px); padding-bottom: clamp(60px, 8vw, 110px); overflow: hidden; position: relative; }
-.hero.grid-bg > .hero-hands-wrap {
-  position: absolute; z-index: 0; pointer-events: none;
-  top: 0; right: 0; bottom: 0; height: 100%;
-}
-.hero-hands { height: 100%; opacity: .55; mix-blend-mode: multiply; }
-.hero-hands img { height: 100%; width: auto; display: block; margin-left: auto; }
-@media (max-width: 640px) { .hero.grid-bg > .hero-hands-wrap { display: none; } }
 .hero.grid-bg > .hero-tricolor {
   position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 2;
   background: linear-gradient(90deg, #009246 0%, #009246 33%, #F1F2F1 33%, #F1F2F1 66%, #CE2B37 66%, #CE2B37 100%);
   opacity: .85;
 }
-@media (prefers-reduced-motion: reduce) { .hero-hands { transition: none; } }
-@media (max-width: 860px) { .hero.grid-bg > .hero-hands-wrap { opacity: .6; } }
 .hero::after {
   content: ""; position: absolute; inset: -10% -10% auto -10%; height: 140%; z-index: 0; pointer-events: none;
   background: radial-gradient(ellipse at 30% 20%, var(--green-glow), transparent 60%), radial-gradient(ellipse at 80% 60%, var(--green-tint), transparent 55%);
