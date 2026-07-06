@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.title">Praxisy — Governance AI per Comuni Italiani</title>
+<meta name="description" content="Piattaforma demo di governance AI per i comuni italiani: documenti generati con l'AI, segnalazioni, sondaggi, sempre con supervisione umana. In fase pilota.">
+<link rel="canonical" href="https://praxisy.info/">
+<meta name="theme-color" content="#06301D">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Praxisy">
+<meta property="og:title" content="Praxisy — Governance AI per Comuni Italiani">
+<meta property="og:description" content="Piattaforma demo di governance AI per i comuni italiani, con supervisione umana su ogni output. In cerca dei primi comuni pilota.">
+<meta property="og:url" content="https://praxisy.info/">
+<meta property="og:image" content="https://praxisy.info/porty-logo.jpeg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="praxisy.css">
+</head>
+<body>
+
+<!-- ── LANGUAGE / COUNTRY BAR ── -->
+<div class="topbar">
+  <div class="langbar">
+    <div class="wrap langbar-inner">
+      <span class="langbar-label" data-i18n="lang.label">🌍 Scegli paese &amp; lingua</span>
+      <div class="lang-pills" role="group" aria-label="Language">
+        <button class="lang-pill" data-lang="it">🇮🇹 <b>IT</b></button>
+        <button class="lang-pill" data-lang="fr">🇫🇷 <b>FR</b></button>
+        <button class="lang-pill" data-lang="en">🇬🇧 <b>EN</b></button>
+        <button class="lang-pill" data-lang="de">🇩🇪 <b>DE</b></button>
+        <button class="lang-pill" data-lang="es">🇪🇸 <b>ES</b></button>
+        <button class="lang-pill eu" data-lang="eu">🇪🇺 <b>EU</b></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="https://praxisy.org" target="_blank" class="brand">
+        <span class="mark logo"><img src="porty-logo.jpeg" alt="Praxisy by Porty"></span>
+        Praxisy <small>by Porty</small>
+      </a>
+      <div class="nav-links">
+        <a href="#prodotto" class="nl" data-i18n="nav.product">Prodotto</a>
+        <a href="#costo" class="nl" data-i18n="nav.cost">Costo</a>
+        <a href="#mercato" class="nl" data-i18n="nav.market">Mercato</a>
+        <a href="#roadmap" class="nl" data-i18n="nav.roadmap">Roadmap</a>
+        <a href="#fondatore" class="nl" data-i18n="nav.founder">Fondatore</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#faq" class="btn btn-ghost" data-i18n="nav.faq">Domande</a>
+        <a href="https://praxisy.org" target="_blank" class="btn btn-primary" data-i18n="nav.demo">▶ Demo · Entra</a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- ── HERO ── -->
+<header class="hero grid-bg">
+  <div class="hero-hands-wrap" aria-hidden="true">
+    <div class="hero-hands"><img src="hero-hands.png" alt=""></div>
+  </div>
+  <span class="hero-tricolor" aria-hidden="true"></span>
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="badge" data-i18n="hero.badge"><span class="dot"></span> Governance AI · Comuni Italiani · Demo Attiva</span>
+      <h1 class="display" data-i18n="hero.h1">Trasformiamo la burocrazia in <em>democrazia.</em></h1>
+      <p class="lead" data-i18n="hero.lead">Documenti ufficiali generati con l'AI, segnalazioni, sondaggi ed eventi. Praxisy porta l'intelligenza artificiale nella governance di ogni comune italiano — accessibile, trasparente, in tempo reale.</p>
+      <div class="hero-cta">
+        <a href="https://praxisy.org" target="_blank" class="btn btn-primary btn-lg" data-i18n="hero.cta1">▶ Prova la demo · scegli il tuo comune</a>
+        <a href="https://instagram.com/praxisy" target="_blank" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">◎ @praxisy</a>
+      </div>
+      <p class="hero-note" data-i18n="hero.note">◈ Nessuna registrazione · Nessuna carta di credito · App completa in arrivo</p>
+    </div>
+
+    <!-- Dashboard mockup -->
+    <div class="reveal" style="--d:140ms">
+      <div class="mock">
+        <div class="mock-bar">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <span class="url" data-i18n="mock.url1">praxisy.org · Demo · Claude AI · Attivo</span>
+        </div>
+        <div class="mock-body">
+          <aside class="mock-side">
+            <div class="grp" data-i18n="mock.panel">Pannello</div>
+            <div class="item on" data-i18n="mock.dash">◈ Cruscotto</div>
+            <div class="item" data-i18n="mock.docs">◫ Documenti AI <span class="badge-n">9</span></div>
+            <div class="item" data-i18n="mock.polls">◉ Sondaggi</div>
+            <div class="grp">AI</div>
+            <div class="item" data-i18n="mock.assistant">◬ Assistente</div>
+            <div class="item" data-i18n="mock.reports">📍 Segnalazioni</div>
+            <div class="item" data-i18n="mock.alerts">🔔 Avvisi <span class="badge-n">5</span></div>
+          </aside>
+          <div class="mock-main">
+            <div class="mock-h">
+              <h4 data-i18n="mock.dashtitle">Cruscotto Comunale</h4>
+              <span class="tag" data-i18n="mock.yourtown">◈ Il tuo comune</span>
+            </div>
+            <div class="mock-cards">
+              <div class="mock-card">
+                <span class="lbl" data-i18n="mock.openreports">📍 Segnalazioni aperte</span>
+                <span class="num" data-count="24">24</span>
+              </div>
+              <div class="mock-card">
+                <span class="lbl" data-i18n="mock.activevotes">🗳️ Voti attivi</span>
+                <span class="num" data-count="847" data-sep="1">847</span>
+              </div>
+            </div>
+            <div class="mock-insight">
+              <span class="lbl" data-i18n="mock.insightlbl">◬ Claude AI · Insight · generato ora</span>
+              <p data-i18n="mock.insighttxt">Bozza delibera piano stradale pronta. Bando PNRR disponibile — scadenza 30 giorni.</p>
+            </div>
+            <div class="mock-bars">
+              <div class="mock-row"><span data-i18n="mock.park">🌳 Parco pubblico</span><span class="mono">70%</span></div>
+              <div class="mock-progress"><i data-fill="70"></i></div>
+              <div class="mock-row"><span data-i18n="mock.roads">🛣️ Manutenzione strade</span><span class="mono">30%</span></div>
+              <div class="mock-progress"><i data-fill="30"></i></div>
+            </div>
+            <div class="mock-ticket">
+              <span class="pin">📍</span>
+              <span data-i18n="mock.ticket1">Buca Via Roma — segnalata 2h fa</span>
+              <span class="st" data-i18n="mock.inprogress">◉ In lavorazione</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item" data-i18n="mq.1"><span class="g">◈</span> Segnalazioni</span>
+    <span class="marquee-item" data-i18n="mq.2"><span class="g">◎</span> Proposte &amp; Sondaggi</span>
+    <span class="marquee-item" data-i18n="mq.3"><span class="g">◉</span> Voto Civico</span>
+    <span class="marquee-item" data-i18n="mq.4"><span class="g">◫</span> Documenti AI</span>
+    <span class="marquee-item" data-i18n="mq.5"><span class="g">◧</span> Bilancio &amp; Fondi EU</span>
+    <span class="marquee-item" data-i18n="mq.6"><span class="g">◬</span> Assistente AI</span>
+    <span class="marquee-item" data-i18n="mq.7"><span class="g">🏙️</span> 7.904 Comuni</span>
+    <span class="marquee-item" data-i18n="mq.8"><span class="g">📍</span> Demo Gratuita</span>
+    <span class="marquee-item" data-i18n="mq.1"><span class="g">◈</span> Segnalazioni</span>
+    <span class="marquee-item" data-i18n="mq.2"><span class="g">◎</span> Proposte &amp; Sondaggi</span>
+    <span class="marquee-item" data-i18n="mq.3"><span class="g">◉</span> Voto Civico</span>
+    <span class="marquee-item" data-i18n="mq.4"><span class="g">◫</span> Documenti AI</span>
+    <span class="marquee-item" data-i18n="mq.5"><span class="g">◧</span> Bilancio &amp; Fondi EU</span>
+    <span class="marquee-item" data-i18n="mq.6"><span class="g">◬</span> Assistente AI</span>
+    <span class="marquee-item" data-i18n="mq.7"><span class="g">🏙️</span> 7.904 Comuni</span>
+    <span class="marquee-item" data-i18n="mq.8"><span class="g">📍</span> Demo Gratuita</span>
+  </div>
+</div>
+
+<!-- ── STATS ── -->
+<section>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal">
+        <span class="glyph" data-i18n="stat.1g">◈ comuni demo</span>
+        <div class="big" data-i18n="stat.1big"><span data-count="13">13</span></div>
+        <div class="cap" data-i18n="stat.1c">dato reale · Milano, Parma, Bobbio + 10 comuni del Nord Italia</div>
+      </div>
+      <div class="stat reveal" style="--d:80ms">
+        <span class="glyph" data-i18n="stat.2g">◬ piattaforma</span>
+        <div class="big"><span data-count="7">7</span></div>
+        <div class="cap" data-i18n="stat.2c">dato reale · aree funzionali attive in demo</div>
+      </div>
+      <div class="stat reveal" style="--d:160ms">
+        <span class="glyph" data-i18n="stat.3g">◎ inclusione</span>
+        <div class="big"><span data-count="8">8</span></div>
+        <div class="cap" data-i18n="stat.3c">dato reale · lingue di interfaccia disponibili</div>
+      </div>
+      <div class="stat reveal" style="--d:240ms">
+        <span class="glyph" data-i18n="stat.4g">◉ assistente</span>
+        <div class="big">24/7</div>
+        <div class="cap" data-i18n="stat.4c">obiettivo di disponibilità tecnica, non ancora misurato su clienti reali</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DOCUMENTI AI · before / after ── -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="ba.eyebrow">⚡ Rivoluzione nei servizi pubblici</span>
+      <h2 class="h-section" data-i18n="ba.h"><span class="muted" style="text-decoration:line-through">Ore</span> per ogni documento. Con l'AI: <em>pochi minuti.</em></h2>
+      <p class="lead" data-i18n="ba.lead">Delibere, determine, bandi, verbali, report. Per anni redigere ogni documento ufficiale ha richiesto ore di lavoro manuale e ricerca normativa. Praxisy genera la bozza con l'AI, conforme e pronta alla firma, in pochi minuti.</p>
+    </div>
+    <div class="ba-grid mt-l">
+      <div class="ba bad reveal">
+        <div class="ba-head" data-i18n="ba.bad.head">◉ Prima · senza AI</div>
+        <div class="ba-list">
+          <div class="ba-li"><span class="li-i">✗</span><div><div class="li-t" data-i18n="ba.bad.1t">Ogni documento: 3–5 ore di lavoro</div><div class="li-d" data-i18n="ba.bad.1d">Stesura manuale, ricerca normativa, revisioni infinite.</div></div></div>
+          <div class="ba-li"><span class="li-i">✗</span><div><div class="li-t" data-i18n="ba.bad.2t">Segnalazioni via telefono</div><div class="li-d" data-i18n="ba.bad.2d">Zero tracciamento, nessuna risposta garantita.</div></div></div>
+          <div class="ba-li"><span class="li-i">✗</span><div><div class="li-t" data-i18n="ba.bad.3t">Report: giorni di raccolta dati</div><div class="li-d" data-i18n="ba.bad.3d">Excel manuali, fonti multiple, nessun benchmark.</div></div></div>
+        </div>
+      </div>
+      <div class="ba good reveal" style="--d:120ms">
+        <div class="ba-head" data-i18n="ba.good.head">◈ Ora · con Praxisy AI</div>
+        <div class="ba-list">
+          <div class="ba-li"><span class="li-i">✓</span><div><div class="li-t" data-i18n="ba.good.1t">Documenti generati con l'AI in pochi minuti</div><div class="li-d" data-i18n="ba.good.1d">Delibere, determine, bandi e verbali: bozze AI conformi, pronte alla firma.</div></div></div>
+          <div class="ba-li"><span class="li-i">✓</span><div><div class="li-t" data-i18n="ba.good.2t">Segnalazioni assegnate in automatico</div><div class="li-d" data-i18n="ba.good.2d">L'AI prioritizza, assegna all'ufficio giusto e traccia tutto.</div></div></div>
+          <div class="ba-li"><span class="li-i">✓</span><div><div class="li-t" data-i18n="ba.good.3t">Dashboard città in tempo reale</div><div class="li-d" data-i18n="ba.good.3d">Dati ISTAT, MEF e OpenCoesione aggiornati ogni giorno.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PILASTRI ── -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="pil.eyebrow">◭ Pilastri della governance moderna</span>
+      <h2 class="h-section" data-i18n="pil.h">Trasparenza e velocità: <em>la promessa di Praxisy.</em></h2>
+    </div>
+    <div class="grid-2 mt-l">
+      <div class="pillar dark reveal">
+        <span class="eyebrow on-dark" data-i18n="pil.t.eyebrow">◭ Trasparenza totale</span>
+        <h3 class="h-lg mt-s" data-i18n="pil.t.h">Ogni atto. Ogni decisione. Visibile a tutti.</h3>
+        <p class="muted mt-s" data-i18n="pil.t.p">L'AI pubblica automaticamente atti, bilanci, sondaggi e risultati. I cittadini sanno sempre dove va il loro denaro — senza dover chiedere.</p>
+        <div class="pl-list">
+          <div class="pl-li"><span class="g">◈</span> <span data-i18n="pil.t.1">Documenti e delibere consultabili in tempo reale</span></div>
+          <div class="pl-li"><span class="g">◧</span> <span data-i18n="pil.t.2">Bilancio partecipativo pubblico e verificabile</span></div>
+          <div class="pl-li"><span class="g">◉</span> <span data-i18n="pil.t.3">Risultati sondaggi visibili a tutta la comunità</span></div>
+          <div class="pl-li"><span class="g">◭</span> <span data-i18n="pil.t.4">Promesse elettorali tracciate e monitorate</span></div>
+        </div>
+      </div>
+      <div class="pillar light reveal" style="--d:120ms">
+        <span class="eyebrow" data-i18n="pil.v.eyebrow">⚡ Velocità dell'AI</span>
+        <h3 class="h-lg mt-s" data-i18n="pil.v.h">Ciò che prima richiedeva giorni, ora richiede minuti.</h3>
+        <p class="muted mt-s" data-i18n="pil.v.p">Claude AI elabora, analizza e risponde in tempo reale. La burocrazia non scompare — ma smette di essere un ostacolo per i cittadini e per chi governa.</p>
+        <div class="pl-list">
+          <div class="pl-li"><span class="g">◬</span> <span data-i18n="pil.v.1">Assistente AI disponibile 24 ore su 24, 7 giorni su 7</span></div>
+          <div class="pl-li"><span class="g">◫</span> <span data-i18n="pil.v.2">Documenti conformi al D.Lgs. 267/2000 generati in minuti</span></div>
+          <div class="pl-li"><span class="g">🏙️</span> <span data-i18n="pil.v.3">Analisi città con dati ISTAT, MEF, OpenCoesione</span></div>
+          <div class="pl-li"><span class="g">🇪🇺</span> <span data-i18n="pil.v.4">Bandi PNRR monitorati e pre-compilati in automatico</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── PRODOTTO ── -->
+<section class="section-pad" id="prodotto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="prod.eyebrow">◫ Il prodotto</span>
+      <h2 class="h-section" data-i18n="prod.h">Sette aree, <em>un comune intero.</em></h2>
+      <p class="lead" data-i18n="prod.lead">Dalla dashboard personale ai servizi generati dall'AI, dalla partecipazione civica alla trasparenza istituzionale. Ecco tutta la piattaforma, oggi già attiva su 13 comuni demo.</p>
+    </div>
+
+    <div class="grid-2 mt-l modules-grid">
+      <div class="card hover reveal">
+        <div class="icn">📊</div>
+        <h4 class="h-md mt-s" data-i18n="mod.1h">Dashboard cittadino</h4>
+        <p class="muted mt-s" data-i18n="mod.1p">Meteo live, allerte Protezione Civile, traffico, avvisi e notifiche per categoria — personalizzabile per ogni cittadino.</p>
+      </div>
+      <div class="card hover reveal" style="--d:60ms">
+        <div class="icn">◬</div>
+        <h4 class="h-md mt-s" data-i18n="mod.2h">Servizi AI</h4>
+        <p class="muted mt-s" data-i18n="mod.2p">Calcola tasse, genera documenti, apri un'attività, gestisci pratiche, sicurezza civica e assistente AI multilingua.</p>
+      </div>
+      <div class="card hover reveal" style="--d:120ms">
+        <div class="icn">◎</div>
+        <h4 class="h-md mt-s" data-i18n="mod.3h">Partecipazione</h4>
+        <p class="muted mt-s" data-i18n="mod.3p">Segnalazioni con mappa e clustering, sondaggi, proposte e bilancio partecipativo.</p>
+      </div>
+      <div class="card hover reveal" style="--d:180ms">
+        <div class="icn">🏛️</div>
+        <h4 class="h-md mt-s" data-i18n="mod.4h">Area istituzionale</h4>
+        <p class="muted mt-s" data-i18n="mod.4p">Dashboard per uffici, ruoli granulari — Sindaco, Segretario, Ufficio Tecnico, URP — e pagina pubblica del ROI del comune.</p>
+      </div>
+      <div class="card hover reveal" style="--d:240ms">
+        <div class="icn">🔤</div>
+        <h4 class="h-md mt-s" data-i18n="mod.5h">Inclusione</h4>
+        <p class="muted mt-s" data-i18n="mod.5p">Dimensione del testo regolabile con slider, interfaccia multilingua in 8 lingue — IT, EN, AL, RO, AR, ZH, ES, FR.</p>
+      </div>
+      <div class="card hover reveal" style="--d:300ms">
+        <div class="icn">📶</div>
+        <h4 class="h-md mt-s" data-i18n="mod.6h">Affidabilità</h4>
+        <p class="muted mt-s" data-i18n="mod.6p">PWA installabile con modalità offline e pagina pubblica di stato dei servizi.</p>
+      </div>
+      <div class="card hover reveal" style="--d:360ms">
+        <div class="icn">🏙️</div>
+        <h4 class="h-md mt-s" data-i18n="mod.7h">Comuni demo</h4>
+        <p class="muted mt-s" data-i18n="mod.7p">Milano, Parma e Bobbio completi, più 10 comuni del Nord Italia tra Lombardia, Veneto ed Emilia-Romagna.</p>
+      </div>
+    </div>
+
+    <!-- 01 Documenti AI -->
+    <div class="feat mt-l reveal">
+      <div>
+        <span class="feat-num" data-i18n="prod.1.num">◫ 01 · Documenti AI</span>
+        <h3 data-i18n="prod.1.h">Scrivi un atto. <em>In pochi minuti.</em></h3>
+        <p class="lead" data-i18n="prod.1.p">Delibere, determine, bandi, verbali e report. Descrivi cosa ti serve: l'AI genera una bozza conforme alla normativa, pronta da rivedere e firmare. Il documento che richiedeva ore, ora è questione di minuti.</p>
+        <div class="feat-list">
+          <div class="feat-li"><span class="g">◫</span> <span data-i18n="prod.1.1">Bozze conformi al D.Lgs. 267/2000 generate dall'AI</span></div>
+          <div class="feat-li"><span class="g">◬</span> <span data-i18n="prod.1.2">Riferimenti normativi e precedenti citati in automatico</span></div>
+          <div class="feat-li"><span class="g">◭</span> <span data-i18n="prod.1.3">Sempre human-in-the-loop: l'ultima parola è del funzionario</span></div>
+        </div>
+        <div class="feat-stat"><span class="n" style="font-size:1.15rem">🎯 Obiettivo pilota</span><span class="t" data-i18n="prod.1.stat">Ridurre in modo misurabile il tempo di redazione di un documento ufficiale. Pubblicheremo i dati reali dei primi piloti.</span></div>
+      </div>
+      <div class="feat-media">
+        <div class="mock">
+          <div class="mock-bar"><div class="dots"><i></i><i></i><i></i></div><span class="url" data-i18n="prod.1.url">documenti · Claude AI</span></div>
+          <div class="mock-main">
+            <div class="mock-insight"><span class="lbl" data-i18n="prod.1.q.lbl">👤 Funzionario</span><p data-i18n="prod.1.q.txt">Prepara la delibera per il nuovo piano del traffico.</p></div>
+            <div class="mock-insight"><span class="lbl" data-i18n="prod.1.a.lbl">◫ Praxisy · bozza generata</span><p data-i18n="prod.1.a.txt">Delibera pronta · conforme TUEL · riferimenti normativi inclusi · pronta alla revisione.</p></div>
+            <div class="kicker mt-s" data-i18n="prod.1.disclaimer">Scenario dimostrativo della demo — non un dato misurato in produzione</div>
+            <div class="mock-cards">
+              <div class="mock-card"><span class="lbl" data-i18n="prod.1.c1">Metodo tradizionale</span><span class="num" style="color:var(--neg)">4 h</span></div>
+              <div class="mock-card"><span class="lbl" data-i18n="prod.1.c2">Con Praxisy (demo)</span><span class="num green-text">pochi minuti</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Segnalazioni -->
+    <div class="feat flip mt-l reveal">
+      <div>
+        <span class="feat-num" data-i18n="prod.2.num">📍 02 · Segnalazioni</span>
+        <h3 data-i18n="prod.2.h">Segnala. Segui. <em>Ottieni risposta.</em></h3>
+        <p class="lead" data-i18n="prod.2.p">Buca in strada, lampione rotto, rifiuti abbandonati. Con Praxisy lo segnali in 30 secondi dal telefono — e ricevi aggiornamenti in tempo reale fino alla risoluzione. Il comune deve risponderti.</p>
+        <div class="feat-list">
+          <div class="feat-li"><span class="g">📸</span> <span data-i18n="prod.2.1">Foto + posizione in un tap — l'AI assegna all'ufficio competente in automatico</span></div>
+          <div class="feat-li"><span class="g">🔔</span> <span data-i18n="prod.2.2">Notifiche in tempo reale sullo stato della tua segnalazione</span></div>
+          <div class="feat-li"><span class="g">◬</span> <span data-i18n="prod.2.3">Più segnalazioni nella stessa zona = priorità automatica più alta</span></div>
+        </div>
+        <div class="feat-stat"><span class="n" style="font-size:1.15rem">🎯 Obiettivo pilota</span><span class="t" data-i18n="prod.2.stat">Risoluzione più rapida grazie alla priorità automatica. Da confermare con i dati dei primi piloti.</span></div>
+      </div>
+      <div class="feat-media">
+        <div class="mock">
+          <div class="mock-bar"><div class="dots"><i></i><i></i><i></i></div><span class="url" data-i18n="prod.2.url">segnalazioni · live</span></div>
+          <div class="mock-main">
+            <div class="mock-ticket"><span class="pin">📍</span> <span data-i18n="prod.2.t1">Buca Via Roma</span><span class="st" data-i18n="prod.2.s1">◉ In corso</span></div>
+            <div class="mock-ticket"><span class="pin">💡</span> <span data-i18n="prod.2.t2">Lampione spento — Via Verdi</span><span class="st" data-i18n="prod.2.s2">◉ Assegnata</span></div>
+            <div class="mock-ticket"><span class="pin">🗑️</span> <span data-i18n="prod.2.t3">Rifiuti Piazza Dante</span><span class="st" data-i18n="prod.2.s3">◉ Risolta</span></div>
+            <div class="mock-insight"><span class="lbl" data-i18n="prod.2.i.lbl">◬ AI · priorità di zona</span><p data-i18n="prod.2.i.txt">3 segnalazioni nello stesso quartiere — priorità aumentata e ufficio strade allertato.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Sondaggi -->
+    <div class="feat mt-l reveal">
+      <div>
+        <span class="feat-num" data-i18n="prod.3.num">◉ 03 · Sondaggi</span>
+        <h3 data-i18n="prod.3.h">La tua voce. <em>Davvero.</em></h3>
+        <p class="lead" data-i18n="prod.3.p">Il comune non decide per i cittadini — decide con loro. 10 secondi per votare, risultati trasparenti per tutti, decisioni basate su dati reali.</p>
+        <div class="feat-list">
+          <div class="feat-li"><span class="g">◉</span> <span data-i18n="prod.3.1">Sondaggi live su spesa pubblica, nuovi servizi, decisioni urbanistiche</span></div>
+          <div class="feat-li"><span class="g">◧</span> <span data-i18n="prod.3.2">Bilancio partecipativo — decidi dove vanno i fondi del comune</span></div>
+          <div class="feat-li"><span class="g">◎</span> <span data-i18n="prod.3.3">Invia proposte e raccogli consenso direttamente dall'app</span></div>
+        </div>
+        <div class="feat-stat"><span class="n" style="font-size:1.15rem">🎯 Obiettivo pilota</span><span class="t" data-i18n="prod.3.stat">Più partecipazione civica grazie a un canale digitale semplice. Misureremo i voti reali comune per comune.</span></div>
+      </div>
+      <div class="feat-media">
+        <div class="mock">
+          <div class="mock-bar"><div class="dots"><i></i><i></i><i></i></div><span class="url" data-i18n="prod.3.url">sondaggio · budget 2026</span></div>
+          <div class="mock-main">
+            <div class="mock-h"><h4 data-i18n="prod.3.q">Dove investire il budget?</h4><span class="tag" data-i18n="prod.3.votes">+843 voti</span></div>
+            <div class="mock-bars">
+              <div class="mock-row"><span data-i18n="mock.park">🌳 Parco pubblico</span><span class="mono">70%</span></div>
+              <div class="mock-progress"><i data-fill="70"></i></div>
+              <div class="mock-row"><span data-i18n="mock.roads">🛣️ Manutenzione strade</span><span class="mono">30%</span></div>
+              <div class="mock-progress"><i data-fill="30"></i></div>
+            </div>
+            <div class="mock-insight"><span class="lbl" data-i18n="prod.3.i.lbl">◎ Esprimi il tuo voto</span><p data-i18n="prod.3.i.txt">Risultati trasparenti, visibili a tutta la comunità in tempo reale.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 Burocrazia -->
+    <div class="feat flip mt-l reveal">
+      <div>
+        <span class="feat-num" data-i18n="prod.4.num">◬ 04 · Burocrazia</span>
+        <h3 data-i18n="prod.4.h">Il comune <em>senza la coda.</em></h3>
+        <p class="lead" data-i18n="prod.4.p">Da settimane a minuti. L'AI risponde 24/7, guida nelle pratiche, mette i documenti a portata di mano. Lo sportello è aperto sempre — anche alle 2 di notte.</p>
+        <div class="feat-list">
+          <div class="feat-li"><span class="g">◬</span> <span data-i18n="prod.4.1">Claude AI attivo 24/7 — risposta immediata a qualsiasi domanda</span></div>
+          <div class="feat-li"><span class="g">◫</span> <span data-i18n="prod.4.2">Documenti e modulistica online, sempre aggiornati</span></div>
+          <div class="feat-li"><span class="g">◭</span> <span data-i18n="prod.4.3">Tempi certi e tracciabili — sai sempre a che punto sei</span></div>
+        </div>
+        <div class="feat-stat"><span class="n" style="font-size:1.15rem">🎯 Obiettivo pilota</span><span class="t" data-i18n="prod.4.stat">Meno tempo per trovare informazioni comunali. Obiettivo da verificare sul campo, non ancora misurato.</span></div>
+      </div>
+      <div class="feat-media">
+        <div class="mock">
+          <div class="mock-bar"><div class="dots"><i></i><i></i><i></i></div><span class="url" data-i18n="prod.4.url">assistente · Claude AI</span></div>
+          <div class="mock-main">
+            <div class="mock-insight"><span class="lbl" data-i18n="prod.4.q.lbl">👤 Cittadino</span><p data-i18n="prod.4.q.txt">Come rinnovo la residenza?</p></div>
+            <div class="mock-insight"><span class="lbl" data-i18n="prod.4.a.lbl">◬ Assistente Praxisy · Claude AI</span><p data-i18n="prod.4.a.txt">Ecco i 3 passaggi: 1. Modulistica online · disponibile — 2. Upload documento — 3. Conferma via mail.</p></div>
+            <div class="kicker mt-s" data-i18n="prod.4.disclaimer">Scenario dimostrativo della demo — non un dato misurato in produzione</div>
+            <div class="mock-cards">
+              <div class="mock-card"><span class="lbl" data-i18n="prod.4.c1">Senza Praxisy</span><span class="num" style="color:var(--neg)">4 gg</span></div>
+              <div class="mock-card"><span class="lbl" data-i18n="prod.4.c2">Con Praxisy (demo)</span><span class="num green-text">pochi minuti</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── GOVERNANCE AI E CONFORMITÀ ── -->
+<section class="section-pad" id="governance">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="gov.eyebrow">◭ Governance AI e conformità</span>
+      <h2 class="h-section" data-i18n="gov.h">L'AI non decide da sola. <em>Decide con voi.</em></h2>
+      <p class="lead" data-i18n="gov.lead">Il vero differenziale di Praxisy non è generare contenuti — è il controllo su ogni output. Nessun testo, nessuna decisione, nessun dato lascia il sistema senza il passaggio di un funzionario.</p>
+    </div>
+    <div class="grid-2 mt-l">
+      <div class="pillar dark reveal">
+        <span class="eyebrow on-dark" data-i18n="gov.a.eyebrow">◈ Controllo umano su ogni output</span>
+        <h3 class="h-lg mt-s" data-i18n="gov.a.h">Human-in-the-loop, sempre.</h3>
+        <p class="muted mt-s" data-i18n="gov.a.p">Nessun output generato dall'AI è definitivo finché un funzionario non lo approva. L'automazione accelera il lavoro, non lo sostituisce.</p>
+        <div class="pl-list">
+          <div class="pl-li"><span class="g">◈</span> <span data-i18n="gov.a.1">Approvazione obbligatoria di un funzionario prima della pubblicazione</span></div>
+          <div class="pl-li"><span class="g">◫</span> <span data-i18n="gov.a.2">Audit trail completo: chi, quando, quale modello, quale approvazione</span></div>
+          <div class="pl-li"><span class="g">◭</span> <span data-i18n="gov.a.3">Versioning dei documenti con note di revisione ad ogni modifica</span></div>
+          <div class="pl-li"><span class="g">◉</span> <span data-i18n="gov.a.4">Report pubblico di trasparenza sull'uso dell'AI e policy sulle responsabilità</span></div>
+        </div>
+      </div>
+      <div class="pillar light reveal" style="--d:120ms">
+        <span class="eyebrow" data-i18n="gov.b.eyebrow">🇪🇺 Conformità e resilienza</span>
+        <h3 class="h-lg mt-s" data-i18n="gov.b.h">Conforme dall'inizio, non corretto dopo.</h3>
+        <p class="muted mt-s" data-i18n="gov.b.p">Privacy e continuità del servizio sono parte dell'architettura, non un livello aggiunto in seguito.</p>
+        <div class="pl-list">
+          <div class="pl-li"><span class="g">🇪🇺</span> <span data-i18n="gov.b.1">Conforme a GDPR, AI Act e CAD</span></div>
+          <div class="pl-li"><span class="g">◧</span> <span data-i18n="gov.b.2">Nessun tracciamento pubblicitario — solo cookie tecnici, dati minimizzati</span></div>
+          <div class="pl-li"><span class="g">◬</span> <span data-i18n="gov.b.3">Modello AI di fallback: il servizio resta attivo anche se il modello principale è giù</span></div>
+          <div class="pl-li"><span class="g">◭</span> <span data-i18n="gov.b.4">Server europei, dati mai ceduti a terzi né usati per pubblicità</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AFFIDABILITÀ E CONFORMITÀ ── -->
+<section class="section-pad" id="affidabilita" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="aff.eyebrow">◭ Affidabilità e conformità</span>
+      <h2 class="h-section" data-i18n="aff.h">Conformità dichiarata, <em>non certificata.</em></h2>
+      <p class="lead" data-i18n="aff.lead">Per ogni normativa indichiamo lo stato reale: conforme by design nell'architettura, in adozione, o prevista per la fase pilota. Nessun bollino di certificazioni che non possediamo.</p>
+    </div>
+    <div class="tbl-wrap reveal mt-l">
+      <table class="data">
+        <thead><tr><th data-i18n="aff.th1">Normativa</th><th data-i18n="aff.th2">Cosa richiede</th><th data-i18n="aff.th3">Stato in Praxisy</th></tr></thead>
+        <tbody>
+          <tr><td data-i18n="aff.r1a">GDPR</td><td data-i18n="aff.r1b">Minimizzazione dati, diritti dell'interessato, no tracciamento non necessario</td><td class="cost" data-i18n="aff.r1c">Conforme by design</td></tr>
+          <tr><td data-i18n="aff.r2a">AI Act UE</td><td data-i18n="aff.r2b">Classificazione del rischio, trasparenza, supervisione umana sugli output AI</td><td class="cost" data-i18n="aff.r2c">Conforme by design</td></tr>
+          <tr><td data-i18n="aff.r3a">CAD e linee guida AgID</td><td data-i18n="aff.r3b">Interoperabilità, accessibilità, identità digitale (SPID/CIE)</td><td data-i18n="aff.r3c">In adozione</td></tr>
+          <tr><td data-i18n="aff.r4a">NIS2</td><td data-i18n="aff.r4b">Principi di sicurezza per servizi essenziali e PA</td><td data-i18n="aff.r4c">In adozione</td></tr>
+          <tr><td data-i18n="aff.r5a">WCAG 2.1 AA / EAA</td><td data-i18n="aff.r5b">Accessibilità per persone con disabilità</td><td data-i18n="aff.r5c">Prevista per la fase pilota</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid-2 mt-m">
+      <div class="card reveal">
+        <h4 class="h-md" data-i18n="aff.gov.h">◈ Governance AI</h4>
+        <div class="pl-list">
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.gov.1">Human-in-the-loop obbligatorio su ogni output generato</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.gov.2">Audit trail e registro dei modelli AI usati</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.gov.3">Versioning dei documenti con note di revisione</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.gov.4">Modello di fallback e policy sulle responsabilità</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.gov.5">Report pubblico di trasparenza sull'uso dell'AI</span></div>
+        </div>
+      </div>
+      <div class="card reveal" style="--d:120ms">
+        <h4 class="h-md" data-i18n="aff.sec.h">◭ Sicurezza</h4>
+        <div class="pl-list">
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.sec.1">Crittografia in transito (HTTPS/TLS) su tutte le connessioni</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.sec.2">Gestione delle chiavi lato server, mai esposte al client</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.sec.3">Security header standard (CSP, HSTS) in adozione</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="aff.sec.4">Principio del minimo privilegio nei ruoli (Sindaco, Segretario, Ufficio Tecnico, URP)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reveal mt-m" style="background:var(--green-tint-2);border-color:var(--green-tint)">
+      <h4 class="h-md" data-i18n="aff.verify.h">◎ Verificalo tu stesso</h4>
+      <p class="muted mt-s" data-i18n="aff.verify.p">Non chiediamo di crederci sulla parola: prova la demo e naviga tu stesso le pagine pubbliche.</p>
+      <div class="chip-row mt-m">
+        <a href="https://praxisy.org" target="_blank" class="chip solid" data-i18n="aff.verify.c1">▶ Demo live · praxisy.org</a>
+        <a href="https://praxisy.org" target="_blank" class="chip solid" data-i18n="aff.verify.c2">◈ Pagina Stato servizi (nella app)</a>
+        <a href="https://praxisy.org" target="_blank" class="chip solid" data-i18n="aff.verify.c3">◭ Report trasparenza AI (nella app)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── COSTO ── -->
+<section class="section-pad" id="costo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="cost.eyebrow">◧ Quanto costa</span>
+      <h2 class="h-section" data-i18n="cost.h">Meno di un <em>caffè</em> l'anno, per abitante.</h2>
+      <p class="lead" data-i18n="cost.lead">Il costo si adatta alla dimensione del comune — ogni cittadino contribuisce una cifra simbolica. Tutte le funzioni incluse, sempre, per tutti.</p>
+      <p class="kicker mt-s" data-i18n="cost.disclaimer">Modello di prezzo indicativo, da confermare con i primi comuni pilota.</p>
+      <a href="https://instagram.com/praxisy" target="_blank" class="btn btn-primary mt-m" data-i18n="cost.cta">◎ Richiedi preventivo →</a>
+    </div>
+    <div class="grid-2 mt-l" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card hover reveal">
+        <div class="icn">☕</div>
+        <h4 class="h-md mt-s" data-i18n="cost.1h">Meno di un caffè</h4>
+        <p class="muted mt-s" data-i18n="cost.1p">Per abitante, ogni anno. Il costo si distribuisce su tutta la comunità.</p>
+        <span class="kicker" data-i18n="cost.1k">per abitante / anno</span>
+      </div>
+      <div class="card hover reveal" style="--d:100ms">
+        <div class="icn">🎬</div>
+        <h4 class="h-md mt-s" data-i18n="cost.2h">Meno di un abbonamento streaming</h4>
+        <p class="muted mt-s" data-i18n="cost.2p">Per i comuni piccoli: costo mensile inferiore a un servizio streaming, ma il valore è per tutta la comunità.</p>
+        <span class="kicker" data-i18n="cost.2k">comuni piccoli</span>
+      </div>
+      <div class="card hover reveal" style="--d:200ms">
+        <div class="icn">⏱️</div>
+        <h4 class="h-md mt-s" data-i18n="cost.3h">Meno di 2 ore di un dipendente al mese</h4>
+        <p class="muted mt-s" data-i18n="cost.3p">Per i comuni medi e grandi: costo inferiore a 2 ore di un impiegato. Ritorno incomparabilmente superiore.</p>
+        <span class="kicker" data-i18n="cost.3k">comuni medi e grandi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PERCHÉ ADESSO ── -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="why.eyebrow">◬ Perché adesso</span>
+      <h2 class="h-section" data-i18n="why.h">Il tuo comune perde <em>tempo e risorse</em> ogni giorno.</h2>
+      <p class="lead" data-i18n="why.lead">Ogni giorno senza Praxisy è un giorno in cui segnalazioni si perdono, cittadini si allontanano e fondi PNRR scadono inutilizzati.</p>
+    </div>
+    <div class="bigstats mt-l">
+      <div class="bigstat reveal">
+        <div class="n" data-count="60" data-suffix="%">60%</div>
+        <h4 data-i18n="why.1h">Bandi PNRR scadono inutilizzati</h4>
+        <p data-i18n="why.1p">I comuni non hanno personale dedicato alla ricerca fondi.</p>
+        <p class="kicker mt-s" data-i18n="why.1src">Fonte: OpenCoesione, MEF 2024</p>
+      </div>
+      <div class="bigstat reveal" style="--d:100ms">
+        <div class="n" data-count="67" data-suffix="%">67%</div>
+        <h4 data-i18n="why.2h">Non sa come segnalare un problema</h4>
+        <p data-i18n="why.2p">Percentuale di cittadini che non sa a chi rivolgersi per una segnalazione al proprio comune.</p>
+        <p class="kicker mt-s" data-i18n="why.2src">Fonte: Censis 2024</p>
+      </div>
+      <div class="bigstat reveal" style="--d:200ms">
+        <div class="n" data-count="32" data-suffix="%">32%</div>
+        <h4 data-i18n="why.3h">Personale PA in uscita entro il 2028</h4>
+        <p data-i18n="why.3p">Età media 50,7 anni: il know-how rischia di andare perso senza strumenti che semplifichino il lavoro.</p>
+        <p class="kicker mt-s" data-i18n="why.3src">Fonte: Ragioneria Generale dello Stato, 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BANNER AI ── -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="pillar dark center reveal">
+      <span class="eyebrow on-dark" data-i18n="banner.eyebrow">◈ Alimentato da Claude AI</span>
+      <h2 class="h-section mt-s" style="color:#fff" data-i18n="banner.h">L'AI non è il futuro. È <em>già qui</em> — e sta cambiando tutto.</h2>
+      <p class="lead muted mt-s" style="max-width:60ch;margin-inline:auto" data-i18n="banner.p">Praxisy è alimentato da Claude AI, il modello di Anthropic. Non un chatbot generico: un sistema specializzato per la governance italiana, che conosce il D.Lgs. 267/2000, i dati ISTAT, i bandi PNRR e le priorità di ogni comune.</p>
+      <div class="chip-row mt-m" style="justify-content:center">
+        <span class="chip solid" data-i18n="banner.c1">◬ Claude AI · Connesso</span>
+        <span class="chip solid" data-i18n="banner.c2">◭ Trasparenza · Verificabile</span>
+        <span class="chip solid" data-i18n="banner.c3">⚡ Velocità · Immediata</span>
+        <span class="chip solid" data-i18n="banner.c4">🇪🇺 GDPR · By design</span>
+        <span class="chip solid" data-i18n="banner.c5">📍 7.904 Comuni</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── IL PROBLEMA ── -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="prob.eyebrow">◬ Il problema</span>
+      <h2 class="h-section" data-i18n="prob.h">La crisi silenziosa della <em>PA locale italiana.</em></h2>
+      <p class="lead" data-i18n="prob.lead">Non è un problema di volontà politica. È un problema strutturale: strumenti del 1990 applicati ai bisogni del 2026. Il costo è misurabile, documentato e crescente.</p>
+    </div>
+
+    <div class="card reveal mt-l" style="background:var(--green-tint-2);border-color:var(--green-tint)">
+      <p class="h-md" data-i18n="prob.box">L'inefficienza burocratica della PA italiana costa tra i 30 e i 40 miliardi di euro l'anno. Di questi, oltre 20 miliardi ricadono direttamente sui comuni italiani.</p>
+      <p class="kicker mt-s" data-i18n="prob.boxsrc">Fonte: CNEL, Rapporto sul mercato del lavoro 2023 · Banca d'Italia, Questioni di Economia e Finanza 2024</p>
+    </div>
+
+    <div class="tbl-wrap reveal mt-m">
+      <table class="data">
+        <thead><tr><th data-i18n="prob.th1">Dimensione</th><th data-i18n="prob.th2">Dato chiave</th><th data-i18n="prob.th3">Costo stimato</th><th class="hide-sm" data-i18n="prob.th4">Fonte</th></tr></thead>
+        <tbody>
+          <tr><td data-i18n="prob.r1a">Delibere comunali</td><td data-i18n="prob.r1b">3–5 ore per atto · 180 delibere/anno per comune</td><td class="cost" data-i18n="prob.r1c">€1,55 mld/anno</td><td class="src hide-sm" data-i18n="prob.r1d">ISTAT, Unioncamere 2024</td></tr>
+          <tr><td data-i18n="prob.r2a">PNRR non intercettati</td><td data-i18n="prob.r2b">60% bandi scaduti senza candidatura</td><td class="cost" data-i18n="prob.r2c">€4,2 mld/anno</td><td class="src hide-sm" data-i18n="prob.r2d">OpenCoesione, MEF 2024</td></tr>
+          <tr><td data-i18n="prob.r3a">Sportello URP</td><td data-i18n="prob.r3b">€42 per pratica vs €3,80 del canale digitale</td><td class="cost" data-i18n="prob.r3c">€1,2 mld/anno</td><td class="src hide-sm" data-i18n="prob.r3d">Osservatorio eGov 2024</td></tr>
+          <tr><td data-i18n="prob.r4a">Contenziosi PA locale</td><td data-i18n="prob.r4b">+28% in 5 anni rispetto al 2019</td><td class="cost" data-i18n="prob.r4c">€890 mln/anno</td><td class="src hide-sm" data-i18n="prob.r4d">Min. della Giustizia 2024</td></tr>
+          <tr><td data-i18n="prob.r5a">Gap IT vs media UE</td><td data-i18n="prob.r5b">€28.000 vs €180.000 spesa IT media per comune</td><td class="cost" data-i18n="prob.r5c">Ritardo crescente</td><td class="src hide-sm" data-i18n="prob.r5d">AgID, Rapporto Digitale PA 2024</td></tr>
+          <tr><td data-i18n="prob.r6a">Personale PA in uscita</td><td data-i18n="prob.r6b">Età media 50,7 anni · 32% in pensione entro 2028</td><td class="cost" data-i18n="prob.r6c">Rischio sistemico</td><td class="src hide-sm" data-i18n="prob.r6d">Ragioneria Generale 2024</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2 mt-m">
+      <div class="card reveal">
+        <h4 class="h-md" data-i18n="prob.c1h">◬ Crisi finanziaria dei comuni</h4>
+        <div class="pl-list">
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c1.1">Oltre 350 comuni in predissesto o dissesto — il 4,4% del totale (Ministero dell'Interno, 2024).</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c1.2">Debito pro capite medio: €1.247 per abitante, +12% dal 2019 (Corte dei Conti, 2024).</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c1.3">Tagli ai trasferimenti statali: €8,1 miliardi ridotti dal 2010 al 2024 (MEF).</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c1.4">Il 18% dei comuni capoluogo ha il bilancio in disavanzo (IFEL 2024).</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c1.5">Organici ridotti del 23% rispetto al 2008 per il blocco del turn-over.</span></div>
+        </div>
+      </div>
+      <div class="card reveal" style="--d:120ms">
+        <h4 class="h-md" data-i18n="prob.c2h">◭ Il problema fondi EU in dettaglio</h4>
+        <div class="pl-list">
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c2.1">I comuni sotto 5.000 ab. intercettano solo il 12% dei fondi, pur essendo il 70,8% del totale (ANCI 2024).</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c2.2">Compilare una candidatura PNRR richiede 18–22 ore lavorative per funzionario esperto.</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c2.3">€4,2 miliardi in bandi scaduti senza candidatura al 31 dicembre 2023 (OpenCoesione).</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c2.4">Il 67% dei cittadini non sa come segnalare un problema al proprio comune (Censis 2024).</span></div>
+          <div class="pl-li"><span class="g">·</span> <span data-i18n="prob.c2.5">4,2 milioni di residenti stranieri esclusi dai servizi per barriere linguistiche (ISTAT 2024).</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── MERCATO ── -->
+<section class="section-pad" id="mercato">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="mkt.eyebrow">◫ Mercato e posizionamento</span>
+      <h2 class="h-section" data-i18n="mkt.h">Nessun competitor AI-native individuato. <em>Stimiamo 18–24 mesi di finestra.</em></h2>
+      <p class="lead" data-i18n="mkt.lead">Il mercato software per la PA locale italiana è dominato da player tradizionali senza AI generativa. Le cifre seguenti sono analisi interne su fonti pubbliche, non verificate da terzi, aggiornate a luglio 2026.</p>
+    </div>
+
+    <div class="stats mt-l" style="border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden">
+      <div class="stat reveal"><div class="big" data-i18n="mkt.s1n">€80–200M</div><div class="cap" data-i18n="mkt.s1c">SAM Italia [stima]</div></div>
+      <div class="stat reveal" style="--d:80ms"><div class="big" data-i18n="mkt.s2n">$400B+</div><div class="cap" data-i18n="mkt.s2c">TAM GovTech globale 2030 [stima]</div></div>
+      <div class="stat reveal" style="--d:160ms"><div class="big" data-i18n="mkt.s3big"><span data-count="7904" data-sep="1">7.904</span></div><div class="cap" data-i18n="mkt.s3c">Comuni italiani [dato ISTAT, mercato indirizzabile]</div></div>
+      <div class="stat reveal" style="--d:240ms"><div class="big">0</div><div class="cap" data-i18n="mkt.s4c">Competitor AI-native individuati nella nostra ricerca [luglio 2026]</div></div>
+    </div>
+
+    <div class="moat-grid mt-l reveal">
+      <div class="moat"><div class="n">01</div><h4 data-i18n="mkt.m1h">Specializzazione verticale profonda</h4><p data-i18n="mkt.m1p">TUEL, PNRR, SIOPE, GDPR italiana, PA locale. Un chatbot generalista richiederebbe tempo di prompt engineering specializzato per raggiungere lo stesso livello di dettaglio.</p></div>
+      <div class="moat"><div class="n">02</div><h4 data-i18n="mkt.m2h">Potenziale data moat</h4><p data-i18n="mkt.m2p">Ogni comune genera dati unici: pattern civici, efficacia delibere, timing PNRR. Se il progetto scala, questi dati aggregati potrebbero diventare un vantaggio difendibile — ipotesi ancora da verificare.</p></div>
+      <div class="moat"><div class="n">03</div><h4 data-i18n="mkt.m3h">Compliance by design</h4><p data-i18n="mkt.m3p">AI Act EU, GDPR, human-in-the-loop pensati fin dall'architettura iniziale, non aggiunti in seguito.</p></div>
+      <div class="moat"><div class="n">04</div><h4 data-i18n="mkt.m4h">Possibili network effects</h4><p data-i18n="mkt.m4p">Più comuni adottano Praxisy, più i benchmark inter-comunali potrebbero diventare significativi. ANCI e Unioni di Comuni sono canali di distribuzione ipotizzati, non ancora attivati.</p></div>
+      <div class="moat"><div class="n">05</div><h4 data-i18n="mkt.m5h">Pricing accessibile</h4><p data-i18n="mkt.m5p">Modello di prezzo pensato per essere simbolico per abitante. Il ROI reale e il tasso di abbandono si potranno verificare solo con i primi clienti paganti.</p></div>
+      <div class="moat"><div class="n">06</div><h4 data-i18n="mkt.m6h">Finestra temporale stimata</h4><p data-i18n="mkt.m6p">Halley e Maggioli hanno architetture legacy che riteniamo più lente da convertire all'AI generativa — una stima, non un dato verificato, alla base della nostra finestra di 18–24 mesi.</p></div>
+    </div>
+    <p class="muted mt-m" style="max-width:70ch" data-i18n="mkt.disclaimer">Le stime di mercato e i vantaggi competitivi descritti sono analisi interne non verificate da terzi e saranno aggiornate man mano che il progetto avanza.</p>
+  </div>
+</section>
+
+<!-- ── METODOLOGIA ── -->
+<section class="section-pad" id="metodologia">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="meth.eyebrow">◧ Metodologia</span>
+      <h2 class="h-section" data-i18n="meth.h">Come misureremo se <em>funziona davvero.</em></h2>
+      <p class="lead" data-i18n="meth.lead">Le promesse contano poco senza dati. Con i primi comuni pilota, misureremo e pubblicheremo:</p>
+    </div>
+    <div class="grid-2 mt-l" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card reveal">
+        <div class="icn">⏱️</div>
+        <h4 class="h-md mt-s" data-i18n="meth.1h">Tempi di lavorazione</h4>
+        <p class="muted mt-s" data-i18n="meth.1p">Tempo reale per generare e approvare un documento, prima e dopo l'adozione — non stime.</p>
+      </div>
+      <div class="card reveal" style="--d:100ms">
+        <div class="icn">📍</div>
+        <h4 class="h-md mt-s" data-i18n="meth.2h">Segnalazioni risolte</h4>
+        <p class="muted mt-s" data-i18n="meth.2p">Numero di segnalazioni chiuse e tempo medio di risoluzione per categoria.</p>
+      </div>
+      <div class="card reveal" style="--d:200ms">
+        <div class="icn">🗳️</div>
+        <h4 class="h-md mt-s" data-i18n="meth.3h">Partecipazione civica</h4>
+        <p class="muted mt-s" data-i18n="meth.3p">Numero di cittadini che votano sondaggi e propongono idee, comune per comune.</p>
+      </div>
+    </div>
+    <p class="muted mt-m" style="max-width:70ch" data-i18n="meth.commit">Ci impegniamo a pubblicare questi dati — positivi o negativi — man mano che i piloti partono, sulla pagina Report di trasparenza.</p>
+  </div>
+</section>
+
+<!-- ── ROADMAP ── -->
+<section class="section-pad" id="roadmap" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="road.eyebrow">◎ Progetti e roadmap</span>
+      <h2 class="h-section" data-i18n="road.h">Dalla demo ai primi comuni reali. <em>Aggiornato a luglio 2026.</em></h2>
+      <p class="lead" data-i18n="road.lead">Lo stato del progetto oggi, cosa stiamo costruendo adesso e cosa arriva dopo.</p>
+    </div>
+    <div class="road road-wrap mt-l">
+      <div class="phase reveal">
+        <div class="phase-meta"><div class="ph done">✓ FATTO</div></div>
+        <div><h4 data-i18n="road.0h">Piattaforma demo completa</h4><p data-i18n="road.0p">Governance AI con human-in-the-loop, PWA installabile con modalità offline, interfaccia multilingua in 8 lingue e 13 comuni demo attivi — Milano, Parma e Bobbio completi, più 10 comuni del Nord Italia.</p></div>
+      </div>
+      <div class="phase reveal">
+        <div class="phase-meta"><div class="ph active">→ IN CORSO</div></div>
+        <div><h4 data-i18n="road.1h">Integrazioni e firma digitale</h4><p data-i18n="road.1p">Integrazione con i gestionali comunali (Halley, Maggioli) tramite architettura adapter. Sviluppo della firma digitale per i documenti generati.</p></div>
+      </div>
+      <div class="phase reveal">
+        <div class="phase-meta"><div class="ph next">○ PROSSIMI</div></div>
+        <div><h4 data-i18n="road.2h">Piloti reali e certificazioni</h4><p data-i18n="road.2p">Primi piloti con comuni reali, avvio delle certificazioni necessarie e notifiche push per cittadini e uffici.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── FONDATORE ── -->
+<section class="section-pad" id="fondatore">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="fnd.eyebrow">◉ Il fondatore</span>
+      <h2 class="h-section" data-i18n="fnd.h">Chi c'è dietro <em>Praxisy.</em></h2>
+    </div>
+    <div class="card reveal mt-l" style="background:var(--green-tint-2);border-color:var(--green-tint)">
+      <h4 class="h-md" data-i18n="fnd.brief.h">◭ Il progetto, in breve</h4>
+      <div class="pl-list mt-s">
+        <div class="pl-li"><span class="g">·</span> <span data-i18n="fnd.brief.1"><strong>Oggi:</strong> piattaforma demo funzionante, 13 comuni simulati, in cerca dei primi piloti reali.</span></div>
+        <div class="pl-li"><span class="g">·</span> <span data-i18n="fnd.brief.2"><strong>Visione 2030:</strong> diventare l'infrastruttura AI di riferimento per la governance dei comuni italiani, poi europei.</span></div>
+        <div class="pl-li"><span class="g">·</span> <span data-i18n="fnd.brief.3"><strong>Contatto diretto:</strong> <a href="mailto:marcoportaro02@gmail.com" style="color:var(--green-700);font-weight:600">marcoportaro02@gmail.com</a></span></div>
+      </div>
+    </div>
+    <div class="founder-grid mt-l">
+      <div class="reveal">
+        <div class="brand-lockup">
+          <span class="logo-tile"><img src="porty-logo.jpeg" alt="Praxisy by Porty"></span>
+          <div>
+            <h4>Marco Portaro</h4>
+            <div class="k" data-i18n="fnd.role">Founder &amp; CEO · Praxisy / Porty</div>
+          </div>
+        </div>
+        <div class="chip-row mt-m">
+          <span class="chip" data-i18n="fnd.t1">🍝 Cucina italiana</span>
+          <span class="chip" data-i18n="fnd.t2">🌿 Giardinaggio</span>
+          <span class="chip" data-i18n="fnd.t3">🏛️ Civic tech</span>
+          <span class="chip" data-i18n="fnd.t4">🎨 Comunicazione visiva</span>
+          <span class="chip" data-i18n="fnd.t5">🌍 Democrazia digitale</span>
+        </div>
+        <div class="mt-m">
+          <span class="kicker" data-i18n="fnd.core">Competenze core</span>
+          <div class="chip-row mt-s">
+            <span class="chip solid">AI Engineering</span>
+            <span class="chip solid">Prompt Design</span>
+            <span class="chip solid">Data Analytics</span>
+            <span class="chip solid">Python · SQL</span>
+            <span class="chip solid">Full-Stack Dev</span>
+            <span class="chip solid">GovTech</span>
+            <span class="chip solid">Product Strategy</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="--d:120ms">
+        <p class="founder-intro" data-i18n="fnd.intro">Dalla <strong>Praxis</strong> dei filosofi greci alla governance del futuro. Come Founder di Praxisy, guido lo sviluppo di una piattaforma AI che trasforma la gestione dei piccoli e grandi comuni. Uniamo la solidità delle istituzioni all'agilità delle startup: sperimentare, validare e semplificare senza perdere tempo.</p>
+        <div class="mt-m">
+          <span class="kicker" data-i18n="fnd.certs">Certificazioni professionali</span>
+          <div class="cert"><span class="ic">🤖</span><div><h5 data-i18n="fnd.cert1h">Specializzazione Data Analytics</h5><div class="meta">DeepLearning.AI · 2025</div><div class="skills">Python · SQL · Data Preprocessing</div></div></div>
+          <div class="cert"><span class="ic">🔍</span><div><h5 data-i18n="fnd.cert2h">Specializzazione Business Intelligence</h5><div class="meta">Google · 2025</div><div class="skills">BI · Data Visualization</div></div></div>
+          <div class="cert"><span class="ic">📊</span><div><h5 data-i18n="fnd.cert3h">Data Analyst Professional</h5><div class="meta">Meta · 2025</div><div class="skills">Data Analysis · Data Management · Spreadsheet</div></div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="philosophy reveal mt-l">
+      <span class="eyebrow" data-i18n="fnd.phil.e">◈ La filosofia di Marco Portaro</span>
+      <p class="display big">Fail fast, <em>learn faster.</em></p>
+      <p class="tr" data-i18n="fnd.phil.tr">« Sbaglia in fretta, impara più in fretta »</p>
+      <p class="why lead" data-i18n="fnd.phil.p">Per Marco ogni errore è un dato, non una sconfitta. Si costruisce per iterazioni rapide: lanciare presto, misurare la realtà, correggere senza esitazione.</p>
+    </div>
+
+    <div class="reveal mt-l">
+      <span class="eyebrow" data-i18n="fnd.proj.e">◑ L'altro progetto di Marco Portaro</span>
+      <div class="proj-lockup mt-m">
+        <span class="em"><img src="porty-logo.jpeg" alt="Porty Clothes"></span>
+        <div>
+          <h3>Porty Clothes</h3>
+          <div class="kicker mt-s" data-i18n="fnd.proj.k">Upcycling · Moda circolare</div>
+        </div>
+      </div>
+      <p class="lead mt-m" data-i18n="fnd.proj.p">Prima di Praxisy, Marco Portaro ha fondato <strong>Porty Clothes</strong>: una startup che recupera tessuti e capi scartati e li trasforma in nuovi vestiti. Una risposta concreta al fast fashion — finora oltre 120 kg di scarti recuperati e circa 250.000 litri d'acqua risparmiati, l'equivalente di 3.100 docce.</p>
+      <div class="grid-2 mt-m">
+        <a href="https://www.thewaymagazine.it/bona-fide-biz/porty-clothes-lupcycling-lo-fanno-i-giovani/" target="_blank" rel="noopener" class="press-card">
+          <span class="src-tag">The Way Magazine</span>
+          <h5 data-i18n="fnd.press1h">Porty Clothes, l'upcycling lo fanno i giovani</h5>
+          <p data-i18n="fnd.press1p">La storia di Marco Portaro e della startup che dà una seconda vita ai tessuti scartati, sfidando l'industria del fast fashion.</p>
+          <span class="read" data-i18n="fnd.readmore">Leggi l'articolo →</span>
+        </a>
+        <a href="https://www.nonsprecare.it/porty-clothes-startup-recupera-vestiti-scartati-sistema-rivende" target="_blank" rel="noopener" class="press-card">
+          <span class="src-tag">Non Sprecare</span>
+          <h5 data-i18n="fnd.press2h">La startup che recupera i vestiti scartati e li rimette in circolo</h5>
+          <p data-i18n="fnd.press2p">120 kg di scarti recuperati e 250.000 litri d'acqua risparmiati: Porty Clothes candidata al Premio Non Sprecare 2026.</p>
+          <span class="read" data-i18n="fnd.readmore">Leggi l'articolo →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section-pad" id="faq" style="padding-top:0">
+  <div class="wrap wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="faq.eyebrow">◭ Domande frequenti</span>
+      <h2 class="h-section" data-i18n="faq.h">Tutto quello che vuoi sapere.</h2>
+    </div>
+    <div class="faq mt-l reveal">
+      <details open>
+        <summary><span data-i18n="faq.q1">La demo è davvero gratuita, senza registrazione?</span><span class="pm">+</span></summary>
+        <p class="ans" data-i18n="faq.a1">Sì, al 100%. Vai su praxisy.org, scegli il tuo comune e accedi subito. Nessun account, nessun form, nessuna carta di credito.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.q2">Quando arriva l'app completa?</span><span class="pm">+</span></summary>
+        <p class="ans" data-i18n="faq.a2">La demo web è già completamente funzionante con tutte le funzioni principali. L'app mobile è in sviluppo — scrivici su Instagram @praxisy per essere tra i primi.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.q3">Come fa il mio comune ad attivarsi?</span><span class="pm">+</span></summary>
+        <p class="ans" data-i18n="faq.a3">Il tuo comune può candidarsi a diventare uno dei primi piloti reali. Non abbiamo ancora un processo di attivazione automatico: ogni pilota viene seguito manualmente insieme al comune, per adattare la piattaforma alle sue esigenze reali.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.q4">Posso proporre Praxisy al mio sindaco?</span><span class="pm">+</span></summary>
+        <p class="ans" data-i18n="faq.a4">Assolutamente. Mostra questa pagina o scrivici su @praxisy su Instagram o a marcoportaro02@gmail.com — prepariamo tutto il materiale.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.q5">I dati dei cittadini sono protetti?</span><span class="pm">+</span></summary>
+        <p class="ans" data-i18n="faq.a5">La piattaforma è progettata per essere conforme al GDPR by design: server europei, dati minimizzati, nessun tracciamento pubblicitario. Non abbiamo ancora un uptime misurato su clienti reali — pubblicheremo i dati non appena i piloti partiranno.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.q6">Praxisy è già usato da comuni reali?</span><span class="pm">+</span></summary>
+        <p class="ans" data-i18n="faq.a6">No. Siamo in fase demo con 13 comuni simulati (Milano, Parma, Bobbio + 10 comuni del Nord Italia). Stiamo cercando i primi comuni disposti a un pilota reale.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.q7">Come saprete se Praxisy funziona davvero?</span><span class="pm">+</span></summary>
+        <p class="ans" data-i18n="faq.a7">Con una metodologia pubblica: tempi di lavorazione, segnalazioni risolte, partecipazione ai sondaggi, prima e dopo l'adozione. I dati dei piloti saranno pubblicati, non solo raccontati (vedi la sezione Metodologia).</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINALE ── -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <span class="eyebrow on-dark">◈ Praxisy</span>
+      <h2 class="mt-s" data-i18n="cta.h">Il tuo comune può essere <em>migliore.</em> Da domani.</h2>
+      <p class="lead" data-i18n="cta.p">Prova la demo gratuita, oggi stesso. Se rappresenti un comune interessato a un pilota reale, scrivici — ti seguiamo passo passo.</p>
+      <div class="hero-cta mt-m">
+        <a href="https://praxisy.org" target="_blank" class="btn btn-primary btn-lg" data-i18n="cta.b1">▶ Prova la demo · scegli il tuo comune</a>
+        <a href="https://instagram.com/praxisy" target="_blank" class="btn btn-ghost btn-lg" data-i18n="cta.b2">◎ @praxisy →</a>
+      </div>
+      <p class="hero-note" style="justify-content:center;color:rgba(255,255,255,.6)" data-i18n="cta.note">Risposta entro 1 giorno · scrivici su Instagram @praxisy</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERCHIAMO COLLABORATORI ── -->
+<section class="section-pad" style="padding-top:0" id="collabora">
+  <div class="wrap">
+    <div class="philosophy reveal">
+      <span class="eyebrow" data-i18n="collab.eyebrow">◈ Cerchiamo collaboratori</span>
+      <p class="lead" style="max-width:60ch;margin-inline:auto;color:rgba(255,255,255,.88);margin-top:20px" data-i18n="collab.p">Praxisy cresce e cerchiamo persone che credono nel progetto — sviluppatori, designer, esperti di PA, o chiunque voglia portare innovazione nei comuni italiani.</p>
+      <p class="why lead" data-i18n="collab.p2">Se il progetto ti convince, scrivici.</p>
+      <div class="hero-cta mt-m" style="justify-content:center">
+        <a href="mailto:marcoportaro02@gmail.com" class="btn btn-primary btn-lg" data-i18n="collab.cta">✉ Scrivici · marcoportaro02@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="https://praxisy.org" target="_blank" class="brand">
+          <span class="mark logo"><img src="porty-logo.jpeg" alt="Praxisy by Porty"></span>
+          Praxisy <small>by Porty</small>
+        </a>
+        <p class="mt-s" style="max-width:34ch;font-size:.9rem" data-i18n="foot.tag">Governance AI per i comuni italiani. Il comune alla portata di tutti.</p>
+      </div>
+      <div class="col">
+        <h6 data-i18n="foot.col1">Prodotto</h6>
+        <a href="#prodotto" data-i18n="nav.product">Funzioni</a>
+        <a href="#costo" data-i18n="nav.cost">Costo</a>
+        <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
+      </div>
+      <div class="col">
+        <h6 data-i18n="foot.col2">Azienda</h6>
+        <a href="#mercato" data-i18n="nav.market">Mercato</a>
+        <a href="#affidabilita" data-i18n="foot.affidabilita">Affidabilità e conformità</a>
+        <a href="#fondatore" data-i18n="nav.founder">Fondatore</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </div>
+      <div class="col">
+        <h6 data-i18n="foot.col3">Contatti</h6>
+        <a href="https://praxisy.org" target="_blank">praxisy.org</a>
+        <a href="https://instagram.com/praxisy" target="_blank">📸 @praxisy</a>
+        <a href="mailto:marcoportaro02@gmail.com">✉ marcoportaro02@gmail.com</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span data-i18n="foot.copy">© <span data-year>2026</span> Praxisy · Made by Porty</span>
+      <span data-i18n="foot.contact">Per informazioni e contatti: @praxisy su Instagram · marcoportaro02@gmail.com</span>
+      <span><a href="privacy.html" data-i18n="foot.privacy">Privacy policy</a> · <a href="cookie.html" data-i18n="foot.cookie">Cookie policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="i18n-fr.js"></script>
+<script src="i18n-en.js"></script>
+<script src="i18n-de.js"></script>
+<script src="i18n-es.js"></script>
+<script src="i18n-eu.js"></script>
+<script src="i18n.js"></script>
+<script src="praxisy.js" defer></script>
+</body>
+</html>
