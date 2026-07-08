@@ -3,6 +3,7 @@ window.PRAXISY_I18N = window.PRAXISY_I18N || {};
 window.PRAXISY_I18N.de = {
   "meta.title": "Praxisy — KI-gestützte Verwaltung für italienische Gemeinden",
   "lang.label": "🌍 Land &amp; Sprache wählen",
+  "tbl.hint": "↔ Wischen, um alle Daten zu sehen",
 
   "nav.product": "Produkt", "nav.results": "Ergebnisse", "nav.cost": "Kosten",
   "nav.municipalities": "Für Gemeinden", "nav.market": "Markt",

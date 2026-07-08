@@ -3,6 +3,7 @@ window.PRAXISY_I18N = window.PRAXISY_I18N || {};
 window.PRAXISY_I18N.es = {
   "meta.title": "Praxisy — Gobernanza asistida por IA para los municipios italianos",
   "lang.label": "🌍 Elige tu país e idioma",
+  "tbl.hint": "↔ Desliza para ver todos los datos",
 
   "nav.product": "Producto", "nav.results": "Resultados", "nav.cost": "Coste",
   "nav.municipalities": "Para municipios", "nav.market": "Mercado",

@@ -2,6 +2,46 @@
 (function () {
   'use strict';
 
+  /* --- Altezza reale della topbar fissa, per compensare gli anchor link --- */
+  var topbar = document.querySelector('.topbar');
+  function syncTopbarHeight() {
+    if (!topbar) return;
+    var h = topbar.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--topbar-h', (h + 16) + 'px');
+  }
+  if (topbar) {
+    syncTopbarHeight();
+    window.addEventListener('resize', syncTopbarHeight);
+    window.addEventListener('orientationchange', syncTopbarHeight);
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(syncTopbarHeight).observe(topbar);
+    }
+  }
+
+  /* --- Menu mobile a tendina --- */
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (navToggle && mobileMenu) {
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+    function toggleMenu() {
+      var open = mobileMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    navToggle.addEventListener('click', toggleMenu);
+    mobileMenu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 860) closeMenu();
+    });
+  }
+
   /* --- Nav: bordo/blur allo scroll --- */
   var nav = document.querySelector('.nav');
   function onScroll() {

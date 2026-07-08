@@ -116,11 +116,25 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
 ::selection { background: var(--green); color: #fff; }
+
+/* Anchor targets must clear the fixed topbar (height set live by praxisy.js) */
+:root { --topbar-h: 132px; }
+section[id] { scroll-margin-top: var(--topbar-h); }
+
+/* Grid items default to a content-based automatic minimum size, which can force
+   an entire grid track (and every sibling in it) wider than the viewport when one
+   child holds an unbreakable run of text. Letting items shrink below that fixes it. */
+.hero-grid > *, .grid-2 > *, .grid-3 > *, .feat > *, .founder-grid > *,
+.modules-grid > *, .moat-grid > *, .bigstats > *, .phase > *, .road > .phase,
+.stats > *, .foot-top > * {
+  min-width: 0;
+}
 
 /* ---------- Layout ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
@@ -176,6 +190,9 @@ strong { font-weight: 600; color: var(--ink); }
   white-space: nowrap; line-height: 1;
 }
 .btn:active { transform: translateY(1px) scale(.99); }
+/* A long translated label (DE/FR run longer than IT/EN) can exceed a narrow
+   viewport's width as a single unbreakable line. Wrapping beats overflowing. */
+@media (max-width: 480px) { .btn { white-space: normal; text-align: center; } }
 .btn-primary {
   background: var(--green); color: #fff;
   box-shadow: 0 1px 1px rgba(6,48,29,.18), 0 8px 22px -10px var(--green-glow);
@@ -295,10 +312,39 @@ strong { font-weight: 600; color: var(--ink); }
 .nav-links a.nl:hover::after, .nav-links a.nl.active::after { transform: scaleX(1); }
 .nav-links a.nl.active { color: var(--ink); }
 .nav-cta { display: inline-flex; align-items: center; gap: 1.2rem; }
-.nav-toggle { display: none; }
+
+/* ---------- Mobile nav toggle + drawer ---------- */
+.nav-toggle {
+  display: none; flex: none; width: 40px; height: 40px; border-radius: 10px;
+  align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+  border: 1px solid var(--line);
+}
+.nav-toggle span { display: block; width: 18px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .25s var(--ease), opacity .25s var(--ease); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none; flex-direction: column; gap: 2px; padding: 10px var(--gutter) 20px;
+  background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  max-height: calc(100vh - 70px); overflow-y: auto;
+}
+.mobile-menu.open { display: flex; }
+.mm-link { padding: 13px 4px; font-size: 1rem; font-weight: 500; color: var(--ink-2); border-bottom: 1px solid var(--line-2); }
+.mm-link:hover, .mm-link:active { color: var(--green-700); }
+.mm-cta { margin-top: 14px; justify-content: center; }
+
 @media (max-width: 860px) {
   .nav-links { display: none; }
   .nav-cta .btn-ghost { display: none; }
+  .nav-toggle { display: flex; }
+}
+.nav-demo-compact { display: none; }
+@media (max-width: 420px) {
+  .nav-inner { gap: 8px; }
+  .brand small { display: none; }
+  .nav-demo-full { display: none; }
+  .nav-demo-compact { display: inline-flex; width: 40px; height: 40px; padding: 0; align-items: center; justify-content: center; flex: none; }
 }
 
 /* ---------- Hero ---------- */
@@ -322,14 +368,14 @@ strong { font-weight: 600; color: var(--ink); }
   display: inline-flex; align-items: center; gap: 0.6em;
   font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em;
   padding: 0.5em 0.9em; border: 1px solid var(--line); border-radius: 100px;
-  background: var(--surface); color: var(--ink-2); white-space: nowrap;
+  background: var(--surface); color: var(--ink-2); white-space: normal; max-width: 100%;
 }
-.badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-bright); box-shadow: 0 0 0 0 var(--green-glow); animation: pulse 2.4s infinite; }
+.badge .dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--green-bright); box-shadow: 0 0 0 0 var(--green-glow); animation: pulse 2.4s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(20,161,101,.4);} 70%{ box-shadow: 0 0 0 8px rgba(20,161,101,0);} 100%{ box-shadow: 0 0 0 0 rgba(20,161,101,0);} }
 .hero h1 { margin-top: 0.6em; }
 .hero .lead { margin-top: 1.1em; max-width: 30ch; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 2em; align-items: center; }
-.hero-note { margin-top: 1.1em; font-size: 0.85rem; color: var(--ink-3); display: flex; align-items: center; gap: 0.5em; }
+.hero-note { margin-top: 1.1em; font-size: 0.85rem; color: var(--ink-3); max-width: 46ch; }
 
 /* Background grid texture */
 .grid-bg::before {
@@ -382,6 +428,7 @@ strong { font-weight: 600; color: var(--ink); }
 /* ---------- Stats strip ---------- */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 400px) { .stats { grid-template-columns: 1fr; } .stats .stat { border-right: 0 !important; border-bottom: 1px solid var(--line); } }
 .stat { padding: clamp(22px, 3vw, 40px); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .stats .stat:nth-child(4n) { border-right: 0; }
 @media (max-width: 760px) { .stats .stat:nth-child(2n) { border-right: 0; } .stats .stat:nth-child(odd) { border-right: 1px solid var(--line); } }
@@ -461,7 +508,17 @@ table.data tbody tr { transition: background .2s; }
 table.data tbody tr:hover { background: var(--green-tint-2); }
 table.data .cost { color: var(--green-700); font-weight: 600; }
 table.data .src { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-4); }
-@media (max-width: 720px) { .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; } table.data { min-width: 620px; } }
+.tbl-hint { display: none; }
+@media (max-width: 720px) {
+  .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table.data { min-width: 560px; }
+  .hide-sm { display: none; }
+  .tbl-hint {
+    display: flex; align-items: center; gap: 0.5em; margin-bottom: 8px;
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--ink-3);
+  }
+}
 
 /* ---------- MOAT grid ---------- */
 .moat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
@@ -562,6 +619,7 @@ table.data .src { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-
 .foot a:hover { color: #fff; }
 .foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
 @media (max-width: 760px) { .foot-top { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 400px) { .foot-top { grid-template-columns: 1fr; } }
 .foot .brand { color: #fff; }
 .foot .brand .mark { background: var(--green-bright); color: #06301d; }
 .foot .col h6 { font-family: var(--mono); font-size: 0.66rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 14px; }
@@ -583,4 +641,7 @@ table.data .src { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-
 .mt-s { margin-top: 14px; } .mt-m { margin-top: 28px; } .mt-l { margin-top: 48px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 @media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .grid-3 { grid-template-columns: 1fr; } }
 .flex { display: flex; } .ac { align-items: center; } .gap { gap: 12px; } .wrap-flex { flex-wrap: wrap; }
