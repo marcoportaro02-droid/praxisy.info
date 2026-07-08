@@ -3,6 +3,7 @@ window.PRAXISY_I18N = window.PRAXISY_I18N || {};
 window.PRAXISY_I18N.eu = {
   "meta.title": "Praxisy — AI Governance Built to EU Standards, Starting in Italy",
   "lang.label": "🌍 Choose your country &amp; language",
+  "tbl.hint": "↔ Swipe to see all data",
 
   "nav.product": "Product", "nav.results": "Results", "nav.cost": "Cost",
   "nav.municipalities": "For municipalities", "nav.market": "Market",

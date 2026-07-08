@@ -68,8 +68,22 @@
       </div>
       <div class="nav-cta">
         <a href="#faq" class="btn btn-ghost" data-i18n="nav.faq">Domande</a>
-        <a href="https://praxisy.org" target="_blank" class="btn btn-primary" data-i18n="nav.demo">▶ Demo · Entra</a>
+        <a href="https://praxisy.org" target="_blank" class="btn btn-primary nav-demo-full" data-i18n="nav.demo">▶ Demo · Entra</a>
+        <a href="https://praxisy.org" target="_blank" class="btn btn-primary nav-demo-compact" aria-label="Demo">▶</a>
       </div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#prodotto" class="mm-link" data-i18n="nav.product">Prodotto</a>
+      <a href="#risultati" class="mm-link" data-i18n="nav.results">Risultati</a>
+      <a href="#costo" class="mm-link" data-i18n="nav.cost">Costo</a>
+      <a href="#comuni" class="mm-link" data-i18n="nav.municipalities">Per i comuni</a>
+      <a href="#roadmap" class="mm-link" data-i18n="nav.roadmap">Roadmap</a>
+      <a href="#fondatore" class="mm-link" data-i18n="nav.founder">Fondatore</a>
+      <a href="#faq" class="mm-link" data-i18n="nav.faq">Domande</a>
+      <a href="https://praxisy.org" target="_blank" class="btn btn-primary mm-cta" data-i18n="nav.demo">▶ Demo · Entra</a>
     </div>
   </nav>
 </div>
@@ -460,6 +474,7 @@
       <h2 class="h-section" data-i18n="res.h">Non promettiamo miracoli. <em>Misuriamo ciò che cambia.</em></h2>
       <p class="lead" data-i18n="res.lead">Le cifre seguenti sono proiezioni basate sui tempi medi rilevati da fonti pubbliche e sui casi d'uso testati in demo. Sono obiettivi della fase pilota, non risultati già misurati su comuni reali — li pubblicheremo non appena disponibili.</p>
     </div>
+    <div class="tbl-hint" data-i18n="tbl.hint">↔ Scorri per vedere tutti i dati</div>
     <div class="tbl-wrap reveal mt-l">
       <table class="data">
         <thead><tr><th data-i18n="res.th1">Attività</th><th data-i18n="res.th2">Tempo medio oggi</th><th data-i18n="res.th3">Con Praxisy (obiettivo pilota)</th><th class="hide-sm" data-i18n="res.th4">Fonte del dato attuale</th></tr></thead>
@@ -535,6 +550,7 @@
       <h2 class="h-section" data-i18n="aff.h">Conformità dichiarata, <em>non certificata.</em></h2>
       <p class="lead" data-i18n="aff.lead">Per ogni normativa indichiamo lo stato reale: conforme by design nell'architettura, in adozione, o prevista per la fase pilota. Nessun bollino di certificazioni che non possediamo.</p>
     </div>
+    <div class="tbl-hint" data-i18n="tbl.hint">↔ Scorri per vedere tutti i dati</div>
     <div class="tbl-wrap reveal mt-l">
       <table class="data">
         <thead><tr><th data-i18n="aff.th1">Normativa</th><th data-i18n="aff.th2">Cosa richiede</th><th data-i18n="aff.th3">Stato in Praxisy</th></tr></thead>
@@ -593,7 +609,7 @@
       <p class="kicker mt-s" data-i18n="cost.disclaimer">Modello di prezzo indicativo, da confermare con i primi comuni pilota.</p>
       <a href="https://instagram.com/praxisy" target="_blank" class="btn btn-primary mt-m" data-i18n="cost.cta">◎ Richiedi preventivo →</a>
     </div>
-    <div class="grid-2 mt-l" style="grid-template-columns:repeat(3,1fr)">
+    <div class="grid-2 grid-3 mt-l">
       <div class="card hover reveal">
         <div class="icn">☕</div>
         <h4 class="h-md mt-s" data-i18n="cost.1h">Meno di un caffè</h4>
@@ -679,6 +695,7 @@
       <p class="kicker mt-s" data-i18n="prob.boxsrc">Fonte: CNEL, Rapporto sul mercato del lavoro 2023 · Banca d'Italia, Questioni di Economia e Finanza 2024</p>
     </div>
 
+    <div class="tbl-hint" data-i18n="tbl.hint">↔ Scorri per vedere tutti i dati</div>
     <div class="tbl-wrap reveal mt-m">
       <table class="data">
         <thead><tr><th data-i18n="prob.th1">Dimensione</th><th data-i18n="prob.th2">Dato chiave</th><th data-i18n="prob.th3">Costo stimato</th><th class="hide-sm" data-i18n="prob.th4">Fonte</th></tr></thead>
@@ -756,7 +773,7 @@
       <h2 class="h-section" data-i18n="meth.h">Come misureremo se <em>funziona davvero.</em></h2>
       <p class="lead" data-i18n="meth.lead">Le promesse contano poco senza dati. Con i primi comuni pilota, misureremo e pubblicheremo:</p>
     </div>
-    <div class="grid-2 mt-l" style="grid-template-columns:repeat(3,1fr)">
+    <div class="grid-2 grid-3 mt-l">
       <div class="card reveal">
         <div class="icn">⏱️</div>
         <h4 class="h-md mt-s" data-i18n="meth.1h">Tempi di lavorazione</h4>
