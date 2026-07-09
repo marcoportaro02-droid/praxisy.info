@@ -11,8 +11,8 @@ window.PRAXISY_I18N.es = {
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Entrar",
 
   "hero.badge": "<span class=\"dot\"></span> Gobernanza asistida por IA · Municipios italianos · Demo pública",
-  "hero.h1": "Menos tiempo en trámites. <em>Más tiempo para gobernar.</em>",
-  "hero.lead": "Documentos oficiales redactados con la asistencia de la inteligencia artificial, gestión de incidencias y herramientas de participación ciudadana — siempre bajo la supervisión de un funcionario responsable. Una plataforma pensada para los municipios pequeños y medianos de Italia, hoy en busca de sus primeros socios piloto.",
+  "hero.h1": "Transformamos la burocracia en <em>democracia.</em>",
+  "hero.lead": "Documentos IA · Incidencias · Participación ciudadana — con supervisión humana, para los municipios italianos.",
   "hero.cta1": "▶ Probar la demo · elige tu municipio",
   "hero.cta2": "✉ Solicitar información",
   "hero.note": "◈ Demo pública, sin registro necesario · Fase piloto abierta a los primeros municipios",

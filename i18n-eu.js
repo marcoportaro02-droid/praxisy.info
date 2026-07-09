@@ -11,8 +11,8 @@ window.PRAXISY_I18N.eu = {
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Enter",
 
   "hero.badge": "<span class=\"dot\"></span> AI-assisted governance · GDPR and AI Act by design · Public demo",
-  "hero.h1": "Governance built to <em>EU standards,</em> starting in Italy.",
-  "hero.lead": "Official documents drafted with AI assistance, report management and civic participation tools — always supervised by an accountable officer, and designed around GDPR and the EU AI Act from day one. Piloting today with small and medium-sized Italian municipalities, with a roadmap toward the wider European market.",
+  "hero.h1": "We turn bureaucracy into <em>democracy.</em>",
+  "hero.lead": "AI Documents · Reports · Civic Participation — GDPR &amp; AI Act by design, for Italian municipalities.",
   "hero.cta1": "▶ Try the demo · pick your municipality",
   "hero.cta2": "✉ Request information",
   "hero.note": "◈ Public demo, no sign-up required · Currently Italy-only · European expansion is a roadmap goal, not yet live",

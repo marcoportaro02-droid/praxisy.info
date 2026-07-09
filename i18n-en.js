@@ -11,8 +11,8 @@ window.PRAXISY_I18N.en = {
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Enter",
 
   "hero.badge": "<span class=\"dot\"></span> AI-assisted governance · Italian municipalities · Public demo",
-  "hero.h1": "Less time on paperwork. <em>More time to govern.</em>",
-  "hero.lead": "Official documents drafted with AI assistance, report management and civic participation tools — always supervised by an accountable officer. A platform built for small and medium-sized Italian municipalities, currently seeking its first pilot partners.",
+  "hero.h1": "We turn bureaucracy into <em>democracy.</em>",
+  "hero.lead": "AI Documents · Reports · Civic Participation — with human oversight, for Italian municipalities.",
   "hero.cta1": "▶ Try the demo · pick your municipality",
   "hero.cta2": "✉ Request information",
   "hero.note": "◈ Public demo, no sign-up required · Pilot phase now open to the first municipalities",
