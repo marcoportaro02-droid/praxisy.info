@@ -11,8 +11,8 @@ window.PRAXISY_I18N.fr = {
   "nav.faq": "FAQ", "nav.demo": "▶ Démo · Entrer",
 
   "hero.badge": "<span class=\"dot\"></span> Gouvernance assistée par l'IA · Communes italiennes · Démo publique",
-  "hero.h1": "Moins de temps en démarches. <em>Plus de temps pour gouverner.</em>",
-  "hero.lead": "Documents officiels rédigés avec l'aide de l'intelligence artificielle, gestion des signalements et outils de participation citoyenne — toujours sous la supervision d'un agent responsable. Une plateforme pensée pour les petites et moyennes communes italiennes, aujourd'hui à la recherche de ses premiers partenaires pilotes.",
+  "hero.h1": "Nous transformons la bureaucratie en <em>démocratie.</em>",
+  "hero.lead": "Documents IA · Signalements · Participation citoyenne — avec supervision humaine, pour les communes italiennes.",
   "hero.cta1": "▶ Essayer la démo · choisissez votre commune",
   "hero.cta2": "✉ Demander des informations",
   "hero.note": "◈ Démo publique, aucune inscription requise · Phase pilote ouverte aux premières communes",

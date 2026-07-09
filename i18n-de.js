@@ -11,8 +11,8 @@ window.PRAXISY_I18N.de = {
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Starten",
 
   "hero.badge": "<span class=\"dot\"></span> KI-gestützte Verwaltung · Italienische Gemeinden · Öffentliche Demo",
-  "hero.h1": "Weniger Zeit für Bürokratie. <em>Mehr Zeit zum Regieren.</em>",
-  "hero.lead": "Offizielle Dokumente, KI-unterstützt erstellt, Meldungsmanagement und Werkzeuge zur Bürgerbeteiligung — stets unter der Aufsicht eines verantwortlichen Sachbearbeiters. Eine Plattform für kleine und mittlere italienische Gemeinden, aktuell auf der Suche nach den ersten Pilotpartnern.",
+  "hero.h1": "Wir verwandeln Bürokratie in <em>Demokratie.</em>",
+  "hero.lead": "KI-Dokumente · Meldungen · Bürgerbeteiligung — mit menschlicher Aufsicht, für italienische Gemeinden.",
   "hero.cta1": "▶ Demo testen · Ihre Gemeinde wählen",
   "hero.cta2": "✉ Informationen anfordern",
   "hero.note": "◈ Öffentliche Demo, keine Registrierung nötig · Pilotphase für erste Gemeinden geöffnet",
