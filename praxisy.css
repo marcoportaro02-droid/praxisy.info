@@ -344,7 +344,7 @@ strong { font-weight: 600; color: var(--ink); }
   .nav-inner { gap: 8px; }
   .brand small { display: none; }
   .nav-demo-full { display: none; }
-  .nav-demo-compact { display: inline-flex; width: 40px; height: 40px; padding: 0; align-items: center; justify-content: center; flex: none; }
+  .nav-demo-compact { display: inline-flex; padding: 0.7em 1em; font-size: 0.86rem; flex: none; }
 }
 
 /* ---------- Hero ---------- */
