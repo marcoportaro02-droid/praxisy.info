@@ -10,9 +10,9 @@ window.PRAXISY_I18N.en = {
   "nav.roadmap": "Roadmap", "nav.founder": "Founder",
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Enter",
 
-  "hero.badge": "<span class=\"dot\"></span> AI-assisted governance · Italian municipalities · Public demo",
+  "hero.badge": "<span class=\"dot\"></span> AI-assisted governance · Coming soon to the UK · Public demo",
   "hero.h1": "We turn bureaucracy into <em>democracy.</em>",
-  "hero.lead": "AI Documents · Reports · Civic Participation — with human oversight, for Italian municipalities.",
+  "hero.lead": "AI Documents · Reports · Civic Participation — built in Italy, ready for UK councils.",
   "hero.cta1": "▶ Try the demo · pick your municipality",
   "hero.cta2": "✉ Request information",
   "hero.note": "◈ Public demo, no sign-up required · Pilot phase now open to the first municipalities",

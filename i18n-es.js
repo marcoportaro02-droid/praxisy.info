@@ -10,9 +10,9 @@ window.PRAXISY_I18N.es = {
   "nav.roadmap": "Hoja de ruta", "nav.founder": "Fundador",
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Entrar",
 
-  "hero.badge": "<span class=\"dot\"></span> Gobernanza asistida por IA · Municipios italianos · Demo pública",
+  "hero.badge": "<span class=\"dot\"></span> Gobernanza asistida por IA · Próximamente en España · Demo pública",
   "hero.h1": "Transformamos la burocracia en <em>democracia.</em>",
-  "hero.lead": "Documentos IA · Incidencias · Participación ciudadana — con supervisión humana, para los municipios italianos.",
+  "hero.lead": "Documentos IA · Incidencias · Participación ciudadana — nacidos en Italia, listos para los municipios españoles.",
   "hero.cta1": "▶ Probar la demo · elige tu municipio",
   "hero.cta2": "✉ Solicitar información",
   "hero.note": "◈ Demo pública, sin registro necesario · Fase piloto abierta a los primeros municipios",
