@@ -10,9 +10,9 @@ window.PRAXISY_I18N.eu = {
   "nav.roadmap": "Roadmap", "nav.founder": "Founder",
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Enter",
 
-  "hero.badge": "<span class=\"dot\"></span> AI-assisted governance · GDPR and AI Act by design · Public demo",
-  "hero.h1": "We turn bureaucracy into <em>democracy.</em>",
-  "hero.lead": "AI Documents · Reports · Civic Participation — GDPR &amp; AI Act by design, for Italian municipalities.",
+  "hero.badge": "<span class=\"dot\"></span> AI-assisted governance · One Europe, growing together · Public demo",
+  "hero.h1": "Growing together, <em>on solid ground.</em>",
+  "hero.lead": "AI Documents · Reports · Civic Participation — one shared standard and a solid foundation, for municipalities to grow on together across Europe.",
   "hero.cta1": "▶ Try the demo · pick your municipality",
   "hero.cta2": "✉ Request information",
   "hero.note": "◈ Public demo, no sign-up required · Currently Italy-only · European expansion is a roadmap goal, not yet live",
