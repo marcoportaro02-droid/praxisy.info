@@ -10,12 +10,11 @@ window.PRAXISY_I18N.eu = {
   "nav.roadmap": "Roadmap", "nav.founder": "Founder",
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Enter",
 
-  "hero.badge": "<span class=\"dot\"></span> AI-assisted governance · One Europe, growing together · Public demo",
   "hero.h1": "Growing together, <em>on solid ground.</em>",
   "hero.lead": "AI Documents · Reports · Civic Participation — one shared standard and a solid foundation, for municipalities to grow on together across Europe.",
   "hero.cta1": "▶ Try the demo · pick your municipality",
   "hero.cta2": "✉ Request information",
-  "hero.note": "◈ Public demo, no sign-up required · Currently Italy-only · European expansion is a roadmap goal, not yet live",
+  "hero.note": "◈ Public demo, no sign-up required",
 
   "mock.url1": "praxisy.org · Demo · Claude AI · Active",
   "mock.panel": "Panel",
