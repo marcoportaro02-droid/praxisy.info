@@ -10,9 +10,8 @@ window.PRAXISY_I18N.fr = {
   "nav.roadmap": "Feuille de route", "nav.founder": "Fondateur",
   "nav.faq": "FAQ", "nav.demo": "▶ Démo · Entrer",
 
-  "hero.badge": "<span class=\"dot\"></span> Gouvernance assistée par l'IA · Bientôt en France · Démo publique",
   "hero.h1": "Nous transformons la bureaucratie en <em>démocratie.</em>",
-  "hero.lead": "Documents IA · Signalements · Participation citoyenne — nés en Italie, prêts pour les communes françaises.",
+  "hero.lead": "Documents IA · Signalements · Participation citoyenne — prêts pour les communes françaises.",
   "hero.cta1": "▶ Essayer la démo · choisissez votre commune",
   "hero.cta2": "✉ Demander des informations",
   "hero.note": "◈ Démo publique, aucune inscription requise · Phase pilote ouverte aux premières communes",

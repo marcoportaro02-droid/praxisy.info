@@ -10,12 +10,11 @@ window.PRAXISY_I18N.en = {
   "nav.roadmap": "Roadmap", "nav.founder": "Founder",
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Enter",
 
-  "hero.badge": "<span class=\"dot\"></span> AI-assisted local government · US launch in progress · Public demo",
-  "hero.h1": "Fixing local government bureaucracy. <em>Starting in the US.</em>",
-  "hero.lead": "AI documents · Case management · Civic participation — proven in Italy, launching first in the US.",
+  "hero.h1": "Fixing local government <em>bureaucracy.</em>",
+  "hero.lead": "AI documents · Case management · Civic participation",
   "hero.cta1": "▶ Try the demo · pick your municipality",
   "hero.cta2": "✉ Request information",
-  "hero.note": "◈ Public demo, no sign-up required · US pilot program opening soon · Proof of concept live today in Italy",
+  "hero.note": "◈ Public demo, no sign-up required",
 
   "start.eyebrow": "🌍 Where we start",
   "start.h": "Built in Italy. <em>Launching first in the United States.</em>",

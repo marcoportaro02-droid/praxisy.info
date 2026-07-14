@@ -10,9 +10,8 @@ window.PRAXISY_I18N.de = {
   "nav.roadmap": "Roadmap", "nav.founder": "Gründer",
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Starten",
 
-  "hero.badge": "<span class=\"dot\"></span> KI-gestützte Verwaltung · Bald auch in Deutschland · Öffentliche Demo",
   "hero.h1": "Wir verwandeln Bürokratie in <em>Demokratie.</em>",
-  "hero.lead": "KI-Dokumente · Meldungen · Bürgerbeteiligung — in Italien entstanden, bereit für deutsche Gemeinden.",
+  "hero.lead": "KI-Dokumente · Meldungen · Bürgerbeteiligung — bereit für deutsche Gemeinden.",
   "hero.cta1": "▶ Demo testen · Ihre Gemeinde wählen",
   "hero.cta2": "✉ Informationen anfordern",
   "hero.note": "◈ Öffentliche Demo, keine Registrierung nötig · Pilotphase für erste Gemeinden geöffnet",
