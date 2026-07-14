@@ -230,7 +230,7 @@ window.PRAXISY_I18N.eu = {
   "gov.b.1": "Compliant with GDPR, the AI Act and the Italian Digital Administration Code (CAD)",
   "gov.b.2": "No advertising tracking — only technical cookies, minimised data",
   "gov.b.3": "Fallback AI model: the service stays up even if the primary model is down",
-  "gov.b.4": "European servers, data never sold to third parties or used for advertising",
+  "gov.b.4": "EU servers today, US infrastructure being evaluated for the US launch · data never sold to third parties or used for advertising",
 
   "aff.eyebrow": "◭ Reliability and compliance",
   "aff.h": "Compliance we state, <em>not compliance we certify.</em>",

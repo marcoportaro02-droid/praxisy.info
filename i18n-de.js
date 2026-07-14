@@ -230,7 +230,7 @@ window.PRAXISY_I18N.de = {
   "gov.b.1": "Konform mit DSGVO, AI Act und dem italienischen Gesetz zur digitalen Verwaltung (CAD)",
   "gov.b.2": "Kein Werbe-Tracking — nur technische Cookies, minimierte Daten",
   "gov.b.3": "KI-Ausweichmodell: Der Dienst bleibt aktiv, auch wenn das Hauptmodell ausfällt",
-  "gov.b.4": "Europäische Server, Daten werden niemals an Dritte weitergegeben oder für Werbung genutzt",
+  "gov.b.4": "Server aktuell in der EU, US-Infrastruktur für den US-Start in Prüfung · Daten werden niemals an Dritte weitergegeben oder für Werbung genutzt",
 
   "aff.eyebrow": "◭ Zuverlässigkeit und Compliance",
   "aff.h": "Erklärte Compliance, <em>nicht zertifizierte.</em>",
