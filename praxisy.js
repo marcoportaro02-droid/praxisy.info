@@ -69,31 +69,39 @@
   }
 
   /* --- Contatori animati --- */
-  function animateCount(el) {
-    var target = parseFloat(el.getAttribute('data-count'));
+  // A stat can vary by language (e.g. localized "why now" figures) via a
+  // data-count-{lang} override, read against body[data-lang] set by i18n.js.
+  function countTarget(el) {
+    var lang = document.body.getAttribute('data-lang');
+    var override = lang && el.getAttribute('data-count-' + lang);
+    return parseFloat(override != null ? override : el.getAttribute('data-count'));
+  }
+  window.PraxisyCountTarget = countTarget;
+  window.PraxisyFormatCount = function (el, value) {
     var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
     var prefix = el.getAttribute('data-prefix') || '';
     var suffix = el.getAttribute('data-suffix') || '';
     var sep = el.getAttribute('data-sep') === '1';
-    var dur = 1500, start = null;
-    function fmt(v) {
-      var s = v.toFixed(dec);
-      if (sep) {
-        var parts = s.split('.');
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-        s = parts.join(',');
-      } else if (dec > 0) {
-        s = s.replace('.', ',');
-      }
-      return prefix + s + suffix;
+    var s = value.toFixed(dec);
+    if (sep) {
+      var parts = s.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      s = parts.join(',');
+    } else if (dec > 0) {
+      s = s.replace('.', ',');
     }
+    return prefix + s + suffix;
+  };
+  function animateCount(el) {
+    var target = countTarget(el);
+    var dur = 1500, start = null;
     function step(ts) {
       if (!start) start = ts;
       var p = Math.min((ts - start) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = fmt(target * eased);
+      el.textContent = window.PraxisyFormatCount(el, target * eased);
       if (p < 1) requestAnimationFrame(step);
-      else el.textContent = fmt(target);
+      else { el.textContent = window.PraxisyFormatCount(el, target); el.classList.add('counted'); }
     }
     requestAnimationFrame(step);
   }
@@ -107,7 +115,8 @@
     counters.forEach(function (el) { cio.observe(el); });
   } else {
     counters.forEach(function (el) {
-      el.textContent = (el.getAttribute('data-prefix') || '') + el.getAttribute('data-count') + (el.getAttribute('data-suffix') || '');
+      el.textContent = window.PraxisyFormatCount(el, countTarget(el));
+      el.classList.add('counted');
     });
   }
 

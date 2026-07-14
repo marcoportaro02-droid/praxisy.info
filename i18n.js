@@ -30,6 +30,14 @@
     document.documentElement.setAttribute('lang', DOC_LANG[lang] || 'it');
     // exact selected pack (distinct from DOC_LANG, e.g. 'en' vs 'eu' both map to lang="en")
     document.body.setAttribute('data-lang', lang);
+    // stats that already finished animating need their number corrected
+    // instantly to this language's value (praxisy.js won't re-trigger them)
+    if (window.PraxisyCountTarget && window.PraxisyFormatCount) {
+      var counted = document.querySelectorAll('[data-count].counted');
+      for (var c = 0; c < counted.length; c++) {
+        counted[c].textContent = window.PraxisyFormatCount(counted[c], window.PraxisyCountTarget(counted[c]));
+      }
+    }
     // refresh dynamic year stamp the nav script may have set
     var ys = document.querySelectorAll('[data-year]');
     for (var i = 0; i < ys.length; i++) ys[i].textContent = new Date().getFullYear();
