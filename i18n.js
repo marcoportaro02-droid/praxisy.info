@@ -61,10 +61,18 @@
     setLang(pill.getAttribute('data-lang'), true);
   });
 
-  // Initial language (persisted or Italian)
-  var initial = 'it';
-  try { initial = localStorage.getItem('praxisy_lang') || 'it'; } catch (e) {}
-  if (SUPPORTED.indexOf(initial) === -1) initial = 'it';
+  // Initial language: explicit past choice wins; otherwise English is the
+  // default (Praxisy's primary market is now US-first), except for
+  // browsers whose locale is Italian, which still land in Italian.
+  var saved = null;
+  try { saved = localStorage.getItem('praxisy_lang'); } catch (e) {}
+  var initial;
+  if (saved && SUPPORTED.indexOf(saved) !== -1) {
+    initial = saved;
+  } else {
+    var nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    initial = nav.indexOf('it') === 0 ? 'it' : 'en';
+  }
   // Apply immediately without the fade on first paint.
   apply(initial);
   setActive(initial);

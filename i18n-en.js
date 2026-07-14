@@ -1,7 +1,7 @@
 /* EN — English content pack (international audience, Italian municipalities) */
 window.PRAXISY_I18N = window.PRAXISY_I18N || {};
 window.PRAXISY_I18N.en = {
-  "meta.title": "Praxisy — AI-Assisted Governance for Italian Municipalities",
+  "meta.title": "Praxisy — Fixing Local Government Bureaucracy, Starting in the US",
   "lang.label": "🌍 Choose your country &amp; language",
   "tbl.hint": "↔ Swipe to see all data",
 
@@ -10,12 +10,29 @@ window.PRAXISY_I18N.en = {
   "nav.roadmap": "Roadmap", "nav.founder": "Founder",
   "nav.faq": "FAQ", "nav.demo": "▶ Demo · Enter",
 
-  "hero.badge": "<span class=\"dot\"></span> AI-assisted governance · Coming soon to the UK · Public demo",
-  "hero.h1": "We turn bureaucracy into <em>democracy.</em>",
-  "hero.lead": "AI Documents · Reports · Civic Participation — built in Italy, ready for UK councils.",
+  "hero.badge": "<span class=\"dot\"></span> AI-assisted local government · US launch in progress · Public demo",
+  "hero.h1": "Fixing local government bureaucracy. <em>Starting in the US.</em>",
+  "hero.lead": "AI documents · Case management · Civic participation — proven in Italy, launching first in the US.",
   "hero.cta1": "▶ Try the demo · pick your municipality",
   "hero.cta2": "✉ Request information",
-  "hero.note": "◈ Public demo, no sign-up required · Pilot phase now open to the first municipalities",
+  "hero.note": "◈ Public demo, no sign-up required · US pilot program opening soon · Proof of concept live today in Italy",
+
+  "start.eyebrow": "🌍 Where we start",
+  "start.h": "Built in Italy. <em>Launching first in the United States.</em>",
+  "start.lead": "Inefficient local bureaucracy isn't an Italian problem — it's structural to local government everywhere. That's why Praxisy's first real commercial launch is in the United States, where the gap between big-tech metro areas and underfunded local administrations is widest.",
+  "start.1tag": "→ PRIMARY LAUNCH",
+  "start.1h": "United States — the launch market",
+  "start.1p": "Texas, California and Mississippi are our first target states: places with heavy big-tech concentration alongside chronically underfunded, digitally behind local governments. That's where the gap — and Praxisy's value — is largest.",
+  "start.2tag": "✓ ORIGIN",
+  "start.2h": "Italy — where Praxisy started",
+  "start.2p": "The project began in Italy, where the first working demos still live — Milan, Parma, Bobbio and other municipalities in the North — and where we keep validating the product ahead of every new market.",
+  "start.3tag": "○ NEXT",
+  "start.3h": "Rest of Europe — together, not alone",
+  "start.3p": "After Italy, and in parallel with the US, we're looking at the rest of Europe — starting with France — with a shared-growth logic: different municipalities, one solid infrastructure.",
+  "start.4tag": "○ VISION",
+  "start.4h": "Global — the end destination",
+  "start.4p": "The goal isn't to stay a local project: it's to become the reference AI infrastructure for local governance, in any country where local government needs to do more with less.",
+  "start.disclaimer": "The selection of Texas, California and Mississippi as first states reflects our internal analysis of the US market, not an existing partnership or active pilot.",
 
   "mock.url1": "praxisy.org · Demo · Claude AI · Active",
   "mock.panel": "Panel",
@@ -230,7 +247,7 @@ window.PRAXISY_I18N.en = {
   "gov.b.1": "Compliant with GDPR, the AI Act and the Italian Digital Administration Code (CAD)",
   "gov.b.2": "No advertising tracking — only technical cookies, minimised data",
   "gov.b.3": "Fallback AI model: the service stays up even if the primary model is down",
-  "gov.b.4": "European servers, data never sold to third parties or used for advertising",
+  "gov.b.4": "EU servers today, US infrastructure being evaluated for the US launch · data never sold to third parties or used for advertising",
 
   "aff.eyebrow": "◭ Reliability and compliance",
   "aff.h": "Compliance we state, <em>not compliance we certify.</em>",
@@ -284,6 +301,17 @@ window.PRAXISY_I18N.en = {
   "cost.3h": "Less than 2 hours of an employee's time per month",
   "cost.3p": "For medium and large municipalities: a cost lower than 2 hours of an employee's time. An incomparably higher return.",
   "cost.3k": "medium and large municipalities",
+
+  "cost.case.eyebrow": "◎ Two illustrative scenarios",
+  "cost.case.h": "An Italian municipality and a US city: <em>same model, two scales.</em>",
+  "cost.case.lead": "Two illustrative simulations — not measured, real-world cases — showing how the same per-resident pricing model applies to an average Italian municipality and a comparably sized US city.",
+  "cost.case.it.h": "🇮🇹 Average Italian municipality",
+  "cost.case.it.pop": "~50,000 residents",
+  "cost.case.it.detail": "About 180 resolutions a year, average IT spend of roughly €28,000/year (AgID 2024). With Praxisy, the estimated cost stays below the price of a coffee a year per resident.",
+  "cost.case.us.h": "🇺🇸 Mid-size Texas city",
+  "cost.case.us.pop": "~50,000 residents",
+  "cost.case.us.detail": "A city at this scale typically handles hundreds of resolutions and permits a year with a lean municipal staff (US Census Bureau, ICMA/MissionSquare). Under the same per-resident pricing model, Praxisy's estimated cost stays below the price of a coffee a year per resident, in dollars.",
+  "cost.case.disclaimer": "Illustrative simulation based on our pricing model, not an active pilot or paying client. Figures on the typical scale of US local government are drawn from general public sources (US Census Bureau, ICMA/MissionSquare) — they don't represent a specific city.",
 
   "why.eyebrow": "◬ Why now",
   "why.h": "Your municipality loses <em>time and resources</em> every day.",
@@ -353,6 +381,14 @@ window.PRAXISY_I18N.en = {
   "prob.c2.3": "€4.2 billion in grants expired without an application as of 31 December 2023 (OpenCoesione).",
   "prob.c2.4": "67% of residents don't know how to report a problem to their municipality (Censis 2024).",
   "prob.c2.5": "4.2 million foreign residents excluded from services due to language barriers (ISTAT 2024).",
+
+  "prob.us.h": "◧ The same crisis, a bigger stage: the United States",
+  "prob.us.lead": "This isn't only an Italian problem. US local governments face the same structural inefficiency — at a far larger scale, and it's the primary market we're building for.",
+  "prob.us.1": "Roughly 90,000 local governments in the US — counties, cities and school districts (US Census Bureau, 2022 Census of Governments).",
+  "prob.us.2": "Nearly one in four local government employees is nearing retirement, a looming workforce crisis for US local administrations (ICMA / MissionSquare Research Institute).",
+  "prob.us.3": "Permitting timelines remain a structural bottleneck for many US local governments (National Association of Home Builders).",
+  "prob.us.4": "Millions of Americans, especially in rural and lower-income areas, still lack adequate access to public digital services (NTIA, Internet Use Survey).",
+  "prob.us.disclaimer": "Figures cited from public US sources (Census Bureau, ICMA/MissionSquare, NAHB, NTIA) — to be verified and refreshed with the latest data before final publication.",
 
   "mkt.eyebrow": "◫ Market and positioning",
   "mkt.h": "No AI-native competitor identified. <em>We estimate an 18–24 month window.</em>",
@@ -487,7 +523,7 @@ window.PRAXISY_I18N.en = {
   "collab.p2": "If the project convinces you, get in touch.",
   "collab.cta": "✉ Get in touch · marcoportaro02@gmail.com",
 
-  "foot.tag": "AI-assisted governance for Italian municipalities. Local government within everyone's reach.",
+  "foot.tag": "AI-assisted local government, starting in the US. Proven in Italy — built for every local government.",
   "foot.col1": "Product", "foot.col2": "Company", "foot.col3": "Contact",
   "foot.affidabilita": "Reliability &amp; compliance",
   "foot.copy": "© <span data-year>2026</span> Praxisy · Made by Porty",

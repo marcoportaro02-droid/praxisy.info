@@ -230,7 +230,7 @@ window.PRAXISY_I18N.fr = {
   "gov.b.1": "Conforme au RGPD, à l'AI Act et au code numérique de l'administration italienne (CAD)",
   "gov.b.2": "Aucun traceur publicitaire — uniquement des cookies techniques, données minimisées",
   "gov.b.3": "Modèle d'IA de secours : le service reste actif même si le modèle principal est indisponible",
-  "gov.b.4": "Serveurs européens, données jamais cédées à des tiers ni utilisées à des fins publicitaires",
+  "gov.b.4": "Serveurs dans l'UE aujourd'hui, infrastructure américaine à l'étude pour le lancement aux États-Unis · données jamais cédées à des tiers ni utilisées à des fins publicitaires",
 
   "aff.eyebrow": "◭ Fiabilité et conformité",
   "aff.h": "Une conformité déclarée, <em>pas certifiée.</em>",
