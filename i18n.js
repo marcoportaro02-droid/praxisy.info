@@ -28,6 +28,8 @@
     if (titleEl) document.title = titleEl.textContent;
     // <html lang>
     document.documentElement.setAttribute('lang', DOC_LANG[lang] || 'it');
+    // exact selected pack (distinct from DOC_LANG, e.g. 'en' vs 'eu' both map to lang="en")
+    document.body.setAttribute('data-lang', lang);
     // refresh dynamic year stamp the nav script may have set
     var ys = document.querySelectorAll('[data-year]');
     for (var i = 0; i < ys.length; i++) ys[i].textContent = new Date().getFullYear();

@@ -127,6 +127,11 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 :root { --topbar-h: 132px; }
 section[id] { scroll-margin-top: var(--topbar-h); }
 
+/* Content that only makes sense for the Italy/Europe narrative is hidden on the
+   US-facing (EN) version of the site — i18n.js stamps body[data-lang]. */
+body[data-lang="en"] .us-hide { display: none !important; }
+body[data-lang="en"] .cost-case-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+
 /* Grid items default to a content-based automatic minimum size, which can force
    an entire grid track (and every sibling in it) wider than the viewport when one
    child holds an unbreakable run of text. Letting items shrink below that fixes it. */
