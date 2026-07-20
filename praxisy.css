@@ -138,6 +138,7 @@ body[data-lang="en"] [data-lang-only="en"],
 body[data-lang="fr"] [data-lang-only="fr"],
 body[data-lang="de"] [data-lang-only="de"],
 body[data-lang="es"] [data-lang-only="es"],
+body[data-lang="pl"] [data-lang-only="pl"],
 body[data-lang="eu"] [data-lang-only="eu"] { display: block; }
 
 /* Grid items default to a content-based automatic minimum size, which can force
