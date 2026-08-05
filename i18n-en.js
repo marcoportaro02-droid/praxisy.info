@@ -112,7 +112,7 @@ window.PRAXISY_I18N.en = {
   "prod.1.1": "AI-generated drafts compliant with local government regulations",
   "prod.1.2": "Legal references and precedents cited automatically",
   "prod.1.3": "Always human-in-the-loop: the final word belongs to the officer",
-  "prod.goal.label": "🎯 Pilot goal",
+  "prod.goal.label": "🎯",
   "prod.1.stat": "Measurably reduce the time needed to draft an official document. We will publish real figures from the first pilots.",
   "prod.1.url": "documents · Claude AI",
   "prod.1.q.lbl": "👤 Officer",

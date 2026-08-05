@@ -95,7 +95,7 @@ window.PRAXISY_I18N.pl = {
   "prod.1.1": "Projekty generowane przez AI, zgodne z lokalnymi przepisami",
   "prod.1.2": "Odniesienia prawne i precedensy cytowane automatycznie",
   "prod.1.3": "Zawsze człowiek w pętli: ostatnie słowo należy do urzędnika",
-  "prod.goal.label": "🎯 Cel pilotażu",
+  "prod.goal.label": "🎯",
   "prod.1.stat": "Wymiernie skrócić czas przygotowania oficjalnego dokumentu. Opublikujemy rzeczywiste dane z pierwszych pilotaży.",
   "prod.1.url": "dokumenty · Claude AI",
   "prod.1.q.lbl": "👤 Urzędnik",

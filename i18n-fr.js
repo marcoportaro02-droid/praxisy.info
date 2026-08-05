@@ -95,7 +95,7 @@ window.PRAXISY_I18N.fr = {
   "prod.1.1": "Projets conformes à la réglementation locale, générés par IA",
   "prod.1.2": "Références juridiques et précédents cités automatiquement",
   "prod.1.3": "Toujours un humain dans la boucle : le dernier mot revient à l'agent",
-  "prod.goal.label": "🎯 Objectif pilote",
+  "prod.goal.label": "🎯",
   "prod.1.stat": "Réduire de manière mesurable le temps de rédaction d'un document officiel. Nous publierons les données réelles des premiers pilotes.",
   "prod.1.url": "documents · Claude AI",
   "prod.1.q.lbl": "👤 Agent",

@@ -95,7 +95,7 @@ window.PRAXISY_I18N.de = {
   "prod.1.1": "KI-generierte Entwürfe konform zu den geltenden Kommunalvorschriften",
   "prod.1.2": "Rechtliche Bezüge und Präzedenzfälle automatisch zitiert",
   "prod.1.3": "Immer ein Mensch in der Entscheidungsschleife: Das letzte Wort hat der Sachbearbeiter",
-  "prod.goal.label": "🎯 Pilotziel",
+  "prod.goal.label": "🎯",
   "prod.1.stat": "Die Bearbeitungszeit eines offiziellen Dokuments messbar verkürzen. Wir werden reale Daten aus den ersten Pilotprojekten veröffentlichen.",
   "prod.1.url": "Dokumente · Claude AI",
   "prod.1.q.lbl": "👤 Sachbearbeiter",
