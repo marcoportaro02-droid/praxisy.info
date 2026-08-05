@@ -95,7 +95,7 @@ window.PRAXISY_I18N.es = {
   "prod.1.1": "Borradores conformes a la normativa local, generados por IA",
   "prod.1.2": "Referencias normativas y precedentes citados automáticamente",
   "prod.1.3": "Siempre con supervisión humana: la última palabra la tiene el funcionario",
-  "prod.goal.label": "🎯 Objetivo piloto",
+  "prod.goal.label": "🎯",
   "prod.1.stat": "Reducir de forma medible el tiempo de redacción de un documento oficial. Publicaremos los datos reales de los primeros pilotos.",
   "prod.1.url": "documentos · Claude AI",
   "prod.1.q.lbl": "👤 Funcionario",
