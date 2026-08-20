@@ -1,12 +1,12 @@
 /* Praxisy — multilingual / multi-country controller
-   IT is the base (markup is Italian). FR/EN/DE/ES/EU are override packs
-   registered on window.PRAXISY_I18N by their respective files. */
+   IT is the base (markup is Italian). FR/EN/DE/ES/EU/PL/PT are override
+   packs registered on window.PRAXISY_I18N by their respective files. */
 (function () {
   'use strict';
 
   var PACKS = window.PRAXISY_I18N || {};
-  var SUPPORTED = ['it', 'fr', 'en', 'de', 'es', 'eu', 'pl'];
-  var DOC_LANG = { it: 'it', fr: 'fr', en: 'en', de: 'de', es: 'es', eu: 'en', pl: 'pl' };
+  var SUPPORTED = ['it', 'fr', 'en', 'de', 'es', 'eu', 'pl', 'pt'];
+  var DOC_LANG = { it: 'it', fr: 'fr', en: 'en', de: 'de', es: 'es', eu: 'en', pl: 'pl', pt: 'pt' };
 
   // Capture the original Italian content for every keyed node.
   var nodes = [].slice.call(document.querySelectorAll('[data-i18n]'));
@@ -74,6 +74,8 @@
   // Initial language: explicit past choice wins; otherwise English is the
   // default (Praxisy's primary market is now US-first), except for
   // browsers whose locale is Italian or Polish, which land in that language.
+  // (Portuguese isn't auto-detected: the "pt" browser locale covers both
+  // Portugal and Brazil, and this pack's content is Portugal-specific.)
   var saved = null;
   try { saved = localStorage.getItem('praxisy_lang'); } catch (e) {}
   var initial;
