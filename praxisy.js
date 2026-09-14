@@ -155,3 +155,96 @@
   for (var i = 0; i < y.length; i++) { y[i].textContent = new Date().getFullYear(); }
 
 })();
+
+/* ---------- Savings calculator (estimate only) ---------- */
+(function () {
+  'use strict';
+  var pop = document.getElementById('calcPop');
+  if (!pop) return;
+  var staff = document.getElementById('calcStaff');
+  var hours = document.getElementById('calcHours');
+  var cost = document.getElementById('calcCost');
+  var share = document.getElementById('calcShare');
+  var outHours = document.getElementById('calcHoursOut');
+  var outValue = document.getElementById('calcValueOut');
+  var outCost = document.getElementById('calcCostOut');
+
+  var WORKING_WEEKS = 44; // netto ferie e festività
+
+  function money(n) {
+    try {
+      return new Intl.NumberFormat(document.documentElement.lang || 'it', {
+        style: 'currency', currency: 'EUR', maximumFractionDigits: 0
+      }).format(n);
+    } catch (e) { return '€' + Math.round(n); }
+  }
+  function num(n) {
+    try { return new Intl.NumberFormat(document.documentElement.lang || 'it').format(Math.round(n)); }
+    catch (e) { return String(Math.round(n)); }
+  }
+  function val(el, fallback) {
+    var v = parseFloat(el && el.value);
+    return isFinite(v) && v >= 0 ? v : fallback;
+  }
+  // Primo anno = attivazione una tantum + primo abbonamento annuale.
+  function firstYearCost(population) {
+    if (population <= 5000) return 2500 + 3600;
+    if (population <= 20000) return 5000 + 7200;
+    if (population <= 50000) return 8000 + 12000;
+    return null; // oltre 50.000: prezzo personalizzato
+  }
+
+  function recalc() {
+    var h = val(staff, 0) * val(hours, 0) * WORKING_WEEKS * val(share, 0.2);
+    var v = h * val(cost, 0);
+    outHours.textContent = num(h);
+    outValue.textContent = money(v);
+
+    var c = firstYearCost(val(pop, 0));
+    if (c === null) {
+      var custom = document.querySelector('[data-i18n="pr.4price"]');
+      outCost.textContent = custom ? custom.textContent.trim() : '—';
+    } else {
+      outCost.textContent = money(c);
+    }
+  }
+
+  [pop, staff, hours, cost, share].forEach(function (el) {
+    if (el) { el.addEventListener('input', recalc); el.addEventListener('change', recalc); }
+  });
+  recalc();
+  // Ricalcola dopo un cambio lingua: cambiano formato numeri ed etichetta custom.
+  document.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('.lang-pill')) window.setTimeout(recalc, 350);
+  });
+})();
+
+/* ---------- Demo request form → pre-filled email ---------- */
+(function () {
+  'use strict';
+  var form = document.getElementById('demoForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    var d = new FormData(form);
+    function f(k) { return (d.get(k) || '').toString().trim(); }
+
+    var subject = 'Richiesta demo Praxisy — ' + (f('ente') || 'Comune');
+    var body = [
+      'Nome: ' + f('nome') + ' ' + f('cognome'),
+      'Comune / Ente: ' + f('ente'),
+      'Email: ' + f('email'),
+      'Numero abitanti: ' + (f('abitanti') || '—'),
+      '',
+      'Messaggio:',
+      f('messaggio') || '—'
+    ].join('\n');
+
+    window.location.href = 'mailto:marcoportaro02@gmail.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+  });
+})();
