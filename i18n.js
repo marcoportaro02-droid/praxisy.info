@@ -71,10 +71,10 @@
     setLang(pill.getAttribute('data-lang'), true);
   });
 
-  // Initial language: explicit past choice wins; otherwise English is the
-  // default (Praxisy's primary market is now US-first), except for
-  // browsers whose locale is Italian or Polish, which land in that language.
-  // (Portuguese isn't auto-detected: the "pt" browser locale covers both
+  // Initial language: an explicit past choice always wins. Otherwise Italian
+  // is the default — the product is sold to Italian municipalities, in euro —
+  // and a visitor whose browser is set to one of the other supported languages
+  // lands in that one. ("pt" is not auto-detected: the locale covers both
   // Portugal and Brazil, and this pack's content is Portugal-specific.)
   var saved = null;
   try { saved = localStorage.getItem('praxisy_lang'); } catch (e) {}
@@ -83,9 +83,11 @@
     initial = saved;
   } else {
     var nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    if (nav.indexOf('it') === 0) initial = 'it';
-    else if (nav.indexOf('pl') === 0) initial = 'pl';
-    else initial = 'en';
+    var AUTO = ['it', 'fr', 'de', 'es', 'pl', 'en'];
+    initial = 'it';
+    for (var a = 0; a < AUTO.length; a++) {
+      if (nav.indexOf(AUTO[a]) === 0) { initial = AUTO[a]; break; }
+    }
   }
   // Apply immediately without the fade on first paint.
   apply(initial);

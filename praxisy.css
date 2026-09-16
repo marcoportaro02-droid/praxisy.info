@@ -612,3 +612,51 @@ table.data .src { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-
 @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .grid-3 { grid-template-columns: 1fr; } }
 .flex { display: flex; } .ac { align-items: center; } .gap { gap: 12px; } .wrap-flex { flex-wrap: wrap; }
+
+/* ---------- Form fields, demo request & savings calculator ---------- */
+.calc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .calc-grid { grid-template-columns: 1fr; } }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+.calc-field { display: flex; flex-direction: column; gap: 6px; font-size: 0.92rem; color: var(--ink-2); }
+.calc-field > span { font-weight: 500; color: var(--ink-2); }
+.calc-field input,
+.calc-field select,
+.calc-field textarea {
+  font: inherit; font-size: 1rem; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-sm); padding: 11px 13px; width: 100%;
+  transition: border-color .2s, box-shadow .2s;
+}
+.calc-field textarea { resize: vertical; min-height: 80px; }
+.calc-field input:hover,
+.calc-field select:hover,
+.calc-field textarea:hover { border-color: var(--ink-4); }
+.calc-field input:focus-visible,
+.calc-field select:focus-visible,
+.calc-field textarea:focus-visible {
+  outline: none; border-color: var(--green);
+  box-shadow: 0 0 0 3px var(--green-glow);
+}
+.calc-field input:invalid:not(:placeholder-shown) { border-color: var(--neg); }
+
+.calc-out { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 760px) { .calc-out { grid-template-columns: 1fr; } }
+.calc-res {
+  background: var(--green-tint-2); border: 1px solid var(--green-tint);
+  border-radius: var(--r); padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.calc-res .lbl {
+  font-family: var(--mono); font-size: 0.64rem; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.calc-res strong {
+  font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em;
+  color: var(--green-700); font-variant-numeric: tabular-nums;
+}
+.demo-form { display: flex; flex-direction: column; gap: 16px; }
+.demo-form .btn { align-self: flex-start; }
+@media (max-width: 560px) { .demo-form .btn { align-self: stretch; text-align: center; } }
+.form-status { font-size: .92rem; color: var(--green-700); font-weight: 500; }
