@@ -7,7 +7,7 @@ window.PRAXISY_I18N.pl = {
 
   "nav.product": "Produkt", "nav.faq": "FAQ", "nav.demo": "Zamów demo",
 
-  "hero.h1": "Gmina prostsza, cyfrowa i <em>bliżej mieszkańców.</em>",
+  "hero.h1": "Zamieniamy biurokrację w <em>demokrację.</em>",
   "hero.lead": "Praxisy to platforma GovTech, która łączy usługi cyfrowe, komunikację, zgłoszenia, partycypację i sztuczną inteligencję w jednym systemie.",
   "hero.cta1": "Zamów demo",
   "hero.cta2": "Zobacz, jak to działa",

@@ -7,7 +7,7 @@ window.PRAXISY_I18N.fr = {
 
   "nav.product": "Produit", "nav.faq": "FAQ", "nav.demo": "Demander une démo",
 
-  "hero.h1": "Une commune plus simple, numérique et <em>proche de ses habitants.</em>",
+  "hero.h1": "Nous transformons la bureaucratie en <em>démocratie.</em>",
   "hero.lead": "Praxisy est la plateforme GovTech qui réunit services numériques, communication, signalements, participation et intelligence artificielle dans un seul système.",
   "hero.cta1": "Demander une démo",
   "hero.cta2": "Voir comment ça marche",
