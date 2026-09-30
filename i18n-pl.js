@@ -5,7 +5,7 @@ window.PRAXISY_I18N.pl = {
   "lang.label": "🌍 Wybierz kraj i język",
   "tbl.hint": "↔ Przesuń, aby zobaczyć wszystkie dane",
 
-  "nav.product": "Produkt", "nav.faq": "FAQ", "nav.demo": "Zamów demo",
+  "nav.product": "Produkt", "nav.faq": "FAQ", "nav.demo": "Zamów demo", "nav.trydemo": "Wypróbuj demo",
 
   "hero.h1": "Zamieniamy biurokrację w <em>demokrację.</em>",
   "hero.lead": "Praxisy to platforma GovTech, która łączy usługi cyfrowe, komunikację, zgłoszenia, partycypację i sztuczną inteligencję w jednym systemie.",

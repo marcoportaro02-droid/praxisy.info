@@ -5,7 +5,7 @@ window.PRAXISY_I18N.fr = {
   "lang.label": "🌍 Choisissez votre pays &amp; langue",
   "tbl.hint": "↔ Faites défiler pour voir toutes les données",
 
-  "nav.product": "Produit", "nav.faq": "FAQ", "nav.demo": "Demander une démo",
+  "nav.product": "Produit", "nav.faq": "FAQ", "nav.demo": "Demander une démo", "nav.trydemo": "Essayer la démo",
 
   "hero.h1": "Nous transformons la bureaucratie en <em>démocratie.</em>",
   "hero.lead": "Praxisy est la plateforme GovTech qui réunit services numériques, communication, signalements, participation et intelligence artificielle dans un seul système.",
