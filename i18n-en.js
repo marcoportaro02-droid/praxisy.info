@@ -5,7 +5,7 @@ window.PRAXISY_I18N.en = {
   "lang.label": "🌍 Choose your country &amp; language",
   "tbl.hint": "↔ Swipe to see all data",
 
-  "nav.product": "Product", "nav.faq": "FAQ", "nav.demo": "Request a demo",
+  "nav.product": "Product", "nav.faq": "FAQ", "nav.demo": "Request a demo", "nav.trydemo": "Try the demo",
 
   "hero.h1": "We turn bureaucracy into <em>democracy.</em>",
   "hero.lead": "Praxisy is the GovTech platform that brings digital services, communication, issue reporting, participation and artificial intelligence together in a single system.",
