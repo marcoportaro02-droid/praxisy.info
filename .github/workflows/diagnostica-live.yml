@@ -1,0 +1,49 @@
+name: Diagnostica live (temporanea)
+
+# Workflow usa-e-getta: il container di sviluppo non ha accesso in uscita
+# verso praxisy.info e praxisy.org, quindi non si puo' verificare da li' cosa
+# servono davvero i due domini. Qui la rete c'e'. Va rimosso dopo l'uso.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/praxisy-govtech-redesign-a0tcge]
+
+jobs:
+  guarda:
+    runs-on: ubuntu-latest
+    steps:
+      - name: praxisy.info — e' aggiornato?
+        run: |
+          set +e
+          echo "HTTP: $(curl -sS -m 20 -o /dev/null -w '%{http_code}' https://praxisy.info/)"
+          curl -sS -m 20 https://praxisy.info/ -o /tmp/info.html
+          echo "bytes: $(wc -c < /tmp/info.html)"
+          echo "--- title:"; grep -o '<title[^>]*>[^<]*' /tmp/info.html | head -1
+          echo "--- h1:";    grep -o 'data-i18n="hero.h1"[^>]*>[^<]*' /tmp/info.html | head -1
+          echo "--- bottoni nav (href + label):"
+          grep -o '<a href="[^"]*"[^>]*class="btn btn-primary[^"]*"[^>]*>[^<]*' /tmp/info.html | head -5
+          echo "--- quante volte compare praxisy.org: $(grep -c 'praxisy\.org' /tmp/info.html)"
+      - name: praxisy.info/praxisy.js — c'e' il fix di oggi?
+        run: |
+          set +e
+          echo "HTTP: $(curl -sS -m 20 -o /dev/null -w '%{http_code}' https://praxisy.info/praxisy.js)"
+          curl -sS -m 20 https://praxisy.info/praxisy.js -o /tmp/p.js
+          echo "bytes: $(wc -c < /tmp/p.js)"
+          echo "handler link esterni presente: $(grep -c 'Link esterni' /tmp/p.js)"
+          echo "window.open presente: $(grep -c 'window.open' /tmp/p.js)"
+          echo "--- header cache:"
+          curl -sS -m 20 -D - -o /dev/null https://praxisy.info/praxisy.js | grep -i 'cache-control\|etag\|age\|x-nf\|server' 
+      - name: praxisy.org — che cosa serve davvero?
+        run: |
+          set +e
+          echo "HTTP: $(curl -sS -m 20 -o /dev/null -w '%{http_code}' https://praxisy.org/)"
+          echo "redirect: $(curl -sS -m 20 -o /dev/null -w '%{redirect_url} -> %{url_effective}' -L https://praxisy.org/)"
+          curl -sS -m 20 -L https://praxisy.org/ -o /tmp/org.html
+          echo "bytes: $(wc -c < /tmp/org.html)"
+          echo "--- title:"; grep -o '<title[^>]*>[^<]*' /tmp/org.html | head -1
+          echo "--- canonical:"; grep -o '<link rel="canonical"[^>]*>' /tmp/org.html | head -1
+          echo "e' il sito vetrina (cerca pricing.html): $(grep -c 'pricing\.html' /tmp/org.html)"
+          echo "e' l'app (cerca sw.js / manifest): $(grep -c 'sw\.js\|manifest\.json' /tmp/org.html)"
+          echo "--- health function:"
+          curl -sS -m 20 -w '\nHTTP %{http_code}\n' https://praxisy.org/.netlify/functions/health | head -5
