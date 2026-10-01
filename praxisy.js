@@ -248,3 +248,30 @@
       + '&body=' + encodeURIComponent(body);
   });
 })();
+
+/* ---------- Link esterni: apertura garantita ----------
+   I browser in-app (Instagram, Facebook, LinkedIn) e i blocchi popup ignorano
+   target="_blank": il tap sul bottone non apre niente. Proviamo la nuova scheda e,
+   se il browser la rifiuta, navighiamo nella stessa scheda invece di non fare nulla. */
+(function () {
+  'use strict';
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target && e.target.closest ? e.target.closest('a[target="_blank"]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (!/^https?:\/\//i.test(href)) return;
+
+    // Nota: non passare 'noopener' tra le feature — con quel flag window.open()
+    // restituisce null anche quando la scheda si apre, e il fallback scatterebbe sempre.
+    var win = null;
+    try { win = window.open(href, '_blank'); } catch (err) { win = null; }
+    e.preventDefault();
+    if (win) {
+      try { win.opener = null; } catch (err) { /* alcuni browser lo vietano */ }
+      try { win.focus(); } catch (err) { /* ignorato dal browser */ }
+      return;
+    }
+    window.location.href = href; // fallback: stessa scheda
+  }, false);
+})();
